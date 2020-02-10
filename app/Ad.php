@@ -9,4 +9,7 @@ class Ad extends Model
     //
     protected $table = 'ads';
 
+    public function products(){
+    	 return $this->belongsTo('App\Product','id','pro_id');
+    }
 }

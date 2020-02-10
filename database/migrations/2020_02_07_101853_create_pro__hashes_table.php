@@ -13,7 +13,7 @@ class CreateProHashesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__hashes', function (Blueprint $table) {
+        Schema::create('pro_hashes', function (Blueprint $table) {
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('hashtag_id');
             $table->timestamps();

@@ -13,7 +13,7 @@ class CreateProPaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__pays', function (Blueprint $table) {
+        Schema::create('pro_pays', function (Blueprint $table) {
             //$table->bigIncrements('id');
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('pay_id');

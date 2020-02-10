@@ -15,7 +15,7 @@ class CreateHallDescriptionsTable extends Migration
     {
         Schema::create('hall_descriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image',100);
+            $table->string('name',100);
             $table->timestamps();
         });
     }

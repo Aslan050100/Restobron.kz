@@ -13,7 +13,7 @@ class CreateProComsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__coms', function (Blueprint $table) {
+        Schema::create('pro_coms', function (Blueprint $table) {
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('comfort_id');
             $table->timestamps();

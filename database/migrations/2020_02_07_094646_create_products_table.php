@@ -24,10 +24,8 @@ class CreateProductsTable extends Migration
             $table->string('seats',100);
             $table->string('video',100);
             $table->double('rating');
-            $table->unsignedBigInteger('kit_id');
             $table->unsignedBigInteger('hall_id');
             $table->timestamps();
-            $table->foreign('kit_id')->references('id')->on('kitchens')->onDelete('cascade');
             $table->foreign('hall_id')->references('id')->on('hall_descriptions')->onDelete('cascade');
         });
     }

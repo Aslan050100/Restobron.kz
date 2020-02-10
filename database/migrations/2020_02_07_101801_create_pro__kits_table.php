@@ -13,7 +13,7 @@ class CreateProKitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__kits', function (Blueprint $table) {
+        Schema::create('pro_kits', function (Blueprint $table) {
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('kitchen_id');
             $table->timestamps();

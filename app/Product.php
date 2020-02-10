@@ -11,6 +11,40 @@ class Product extends Model
 
 
     public function ads(){
-    	 return $this->belongsTo('App\Ad','id','pro_id');
+    	 return $this->hasMany('App\Ad','pro_id','id');
     }
+    public function feedbacks(){
+    	 return $this->hasMany('App\Feedback','pro_id','id');
+    }
+    public function hall_descriptions(){
+    	 return $this->belongsTo('App\Hall_description','hall_id','id');
+    }
+    public function menus(){
+    	 return $this->hasMany('App\Menu','pro_id','id');
+    }
+    public function product_images(){
+    	 return $this->hasMany('App\Product_image','pro_id','id');
+    }
+    public function pays(){
+         return $this->belongsToMany('App\Pay','pro_pays','pay_id','pro_id');
+    }
+    public function kitchens(){
+         return $this->belongsToMany('App\Kitchen','pro_kits','kitchen_id','pro_id');
+    }
+    public function parkings(){
+         return $this->belongsToMany('App\Kitchen','pro_parkings','parking_id','pro_id');
+    }
+    public function comforts(){
+         return $this->belongsToMany('App\Comfort','pro_coms','comfort_id','pro_id');
+    }
+    public function hashtags(){
+         return $this->belongsToMany('App\Hashtag','pro_hashes','hashtag_id','pro_id');
+    }
+    public function average_checks(){
+         return $this->belongsToMany('App\Average_check','pro_aves','average_id','pro_id');
+    }
+    public function reservations(){
+         return $this->hasMany('App\Reservation','pro_id','id');
+    }
+
 }

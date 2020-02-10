@@ -13,7 +13,7 @@ class CreateProPayrkingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__payrkings', function (Blueprint $table) {
+        Schema::create('pro_parkings', function (Blueprint $table) {
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('parking_id');
             $table->timestamps();

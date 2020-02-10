@@ -13,7 +13,7 @@ class CreateProAvesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pro__aves', function (Blueprint $table) {
+        Schema::create('pro_aves', function (Blueprint $table) {
             $table->unsignedBigInteger('pro_id');
             $table->unsignedBigInteger('average_id');
             $table->timestamps();
