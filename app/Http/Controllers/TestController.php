@@ -16,6 +16,5 @@ class TestController extends Controller
     	dd($product->hall_descriptions);
     	$hall_descriptions = Hall_description::get();
     	dd($hall_descriptions[0]->products);
-
     }
 }
