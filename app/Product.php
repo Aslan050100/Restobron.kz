@@ -32,13 +32,13 @@ class Product extends Model
          return $this->belongsToMany('App\Pay','pro_pays','pay_id','pro_id');
     }
     public function kitchens(){
-         return $this->belongsToMany('App\Kitchen','pro_kits','kitchen_id','pro_id');
+         return $this->belongsToMany('App\Kitchen','pro_kits','pro_id','kitchen_id');
     }
     public function parkings(){
          return $this->belongsToMany('App\Kitchen','pro_parkings','parking_id','pro_id');
     }
     public function comforts(){
-         return $this->belongsToMany('App\Comfort','pro_coms','comfort_id','pro_id');
+         return $this->belongsToMany('App\Comfort','pro_coms','pro_id','comfort_id');
     }
     public function hashtags(){
          return $this->belongsToMany('App\Hashtag','pro_hashes','hashtag_id','pro_id');
