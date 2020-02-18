@@ -9,6 +9,7 @@ use App\Average_check;
 use App\Kitchen;
 use App\Comfort;
 
+use App\Http\Resources\Product as ProductResource;
 class ProductController extends Controller
 {
     //
@@ -39,7 +40,7 @@ class ProductController extends Controller
     	$hours = $product->hours;
     	$product_images = $product->product_images;
     	//dd($product_images);
-    	return response()->json($product);	
+    	return new ProductResource($product);
     }
     
 }
