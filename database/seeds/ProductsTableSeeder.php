@@ -22,7 +22,9 @@ class ProductsTableSeeder extends Seeder
             'seats' =>mt_rand(100,500),
             'video' =>Str::random(10),
             'rating' =>mt_rand(1,10),
-            'hall_id' =>mt_rand(1,2),
+            'hall_id' =>mt_rand(1,9),
+            'city_id' =>mt_rand(1,1),
+            'map'=>Str::random(20),
         ]);
     }
 }

@@ -16,8 +16,11 @@ class Product extends Model
     public function feedbacks(){
     	 return $this->hasMany('App\Feedback','pro_id','id');
     }
-    public function hall_descriptions(){
+    public function hall_description(){
     	 return $this->belongsTo('App\Hall_description','hall_id','id');
+    }
+    public function city(){
+         return $this->belongsTo('App\City','city_id','id');
     }
     public function menus(){
     	 return $this->hasMany('App\Menu','pro_id','id');
@@ -45,6 +48,9 @@ class Product extends Model
     }
     public function reservations(){
          return $this->hasMany('App\Reservation','pro_id','id');
+    }
+    public function hours(){
+         return $this->hasMany('App\Hour','pro_id','id');
     }
 
 }

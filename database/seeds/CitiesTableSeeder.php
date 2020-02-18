@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductAverageChecksTableSeeder extends Seeder
+class CitiesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,8 @@ class ProductAverageChecksTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('pro_aves')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'average_id' => mt_rand(1,5),
+        DB::table('cities')->insert([
+            'name' => "Almaty",
         ]);
     }
 }

@@ -24,9 +24,12 @@ class CreateProductsTable extends Migration
             $table->string('seats',100);
             $table->string('video',100);
             $table->double('rating');
+            $table->string('map',200);
             $table->unsignedBigInteger('hall_id');
+            $table->unsignedBigInteger('city_id');
             $table->timestamps();
             $table->foreign('hall_id')->references('id')->on('hall_descriptions')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

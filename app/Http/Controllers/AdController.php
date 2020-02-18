@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Ad;
+use App\Ad;
 class AdController extends Controller
 {
     //
