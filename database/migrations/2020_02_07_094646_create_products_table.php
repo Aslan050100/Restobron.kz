@@ -20,10 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('phone_number',20);
             $table->string('address',100);
             $table->string('data_open',100);
-            $table->string('work_time',100);
             $table->string('seats',100);
             $table->string('video',100);
-            $table->double('rating');
+            $table->double('rating')->default(0);
             $table->string('map',200);
             $table->unsignedBigInteger('hall_id');
             $table->unsignedBigInteger('city_id');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Feedback;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\Http\Resources\AverageCheck as AverageCheckResource;
@@ -10,6 +11,7 @@ use App\Http\Resources\Kitchen as KitchenResource;
 use App\Http\Resources\Comfort as ComfortResource;
 use App\Http\Resources\Hour as HourResource;
 use App\Http\Resources\ProductImage as ProductImageResource;
+use App\Http\Resources\Feedback as FeedbackResource;
 class Product extends JsonResource
 {
     /**
@@ -28,7 +30,7 @@ class Product extends JsonResource
             'address' =>$this->address,
             'data_open' =>$this->data_open,
             'seats' =>$this->seats,
-            'video' =>$this->video,   
+            'video' =>$this->video,
             'rating' =>$this->rating,
             'map' =>$this->map,
             'created_at' => $this->created_at,
@@ -38,6 +40,7 @@ class Product extends JsonResource
             'comforts' => ComfortResource::collection($this->comforts),
             'hours' => HourResource::collection($this->hours),
             'product_images' => ProductImageResource::collection($this->product_images),
+            'feedbacks'=>FeedbackResource::collection($this->feedbacks),
         ];
     }
 }

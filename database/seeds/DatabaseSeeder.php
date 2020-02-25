@@ -11,30 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([ 
-        	//UsersTableSeeder::class,
-        	//ProductsTableSeeder::class,
-        	//ProductImagesTableSeeder::class,
-        	//ComfortsTableSeeder::class,
-        	//AdsTableSeeder::class,
-        	//AverageChecksTableSeeder::class,
-        	//DishTypesTableSeeder::class,
-        	//FeedbacksTableSeeder::class,
-        	//HashtagsTableSeeder::class,
-        	//KitchensTableSeeder::class,
-        	//MenusTableSeeder::class,
-        	//PaysTableSeeder::class,
-        	//ParkingsTableSeeder::class,
-        	//HallDescriptionsTableSeeder::class,
-        	// ProductPaysTableSeeder::class,
-        	// ProductAverageChecksTableSeeder::class,
-        	// ProductComfortsTableSeeder::class,
-        	// ProductHashtagsTableSeeder::class,
-        	// ProductKitchensTableSeeder::class,
-        	// ProductParkingsTableSeeder::class,
-         //    HoursTableSeeder::class,
-            //CitiesTableSeeder::class,
-        	
-        ]);
+        $this->call([HallDescriptionsTableSeeder::class,CitiesTableSeeder::class]);
     }
 }

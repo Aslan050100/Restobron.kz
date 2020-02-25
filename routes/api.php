@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/getProducts','ProductController@getProducts');
 Route::get('/getAds','AdController@getAds');
+Route::get('/getFeedbacks','FeedbackController@getFeedbacks');
 Route::get('/getPrices','ProductController@getPrice');
 Route::get('/getKitchens','ProductController@getKitchens');
 Route::get('/getComforts','ProductController@getComforts');
