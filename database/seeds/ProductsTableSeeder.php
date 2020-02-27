@@ -18,12 +18,11 @@ class ProductsTableSeeder extends Seeder
             'phone_number' => mt_rand(100000, 999999),
             'address' =>Str::random(10),
             'data_open' => Str::random(6),
-            'work_time' =>Str::random(10),
             'seats' =>mt_rand(100,500),
             'video' =>Str::random(10),
             'rating' =>mt_rand(1,10),
-            'hall_id' =>mt_rand(1,9),
-            'city_id' =>mt_rand(1,1),
+            'hall_id' =>mt_rand(1,6),
+            'city_id' =>mt_rand(1,6),
             'map'=>Str::random(20),
         ]);
     }
