@@ -91,12 +91,22 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('average_check') }}">
-                                    {{ __('Средний чек') }}
+                                    {{ __('Средние чеки') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('city') }}">
-                                    {{ __('Город') }}
+                                    {{ __('Города') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('comfort') }}">
+                                    {{ __('Удобства') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dish_type') }}">
+                                    {{ __('Типы блюда') }}
                                 </a>
                             </li>
                         </ul>
