@@ -16,8 +16,8 @@ class MenusTableSeeder extends Seeder
         	'name' => Str::random(10),
         	'price' => mt_rand(1000,25000),
         	'description' => Str::random(30),
-        	'pro_id'=>mt_rand(2,7),
-        	'dish_type_id'=>mt_rand(1,3),
+        	'pro_id'=>mt_rand(2,11),
+        	'dish_type_id'=>mt_rand(1,8),
         ]);
     }
 }

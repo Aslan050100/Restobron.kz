@@ -13,8 +13,8 @@ class ProductPaysTableSeeder extends Seeder
     {
         //
         DB::table('pro_pays')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'pay_id' => mt_rand(1,9),
+        	'pro_id' => mt_rand(2,10),
+        	'pay_id' => mt_rand(1,8),
         ]);
     }
 }

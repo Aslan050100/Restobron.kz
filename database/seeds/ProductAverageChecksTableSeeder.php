@@ -13,8 +13,8 @@ class ProductAverageChecksTableSeeder extends Seeder
     {
         //
         DB::table('pro_aves')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'average_id' => mt_rand(1,5),
+        	'pro_id' => mt_rand(2,11),
+        	'average_id' => mt_rand(1,8),
         ]);
     }
 }

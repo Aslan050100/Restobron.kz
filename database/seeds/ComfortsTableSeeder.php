@@ -14,7 +14,6 @@ class ComfortsTableSeeder extends Seeder
         //
         DB::table('comforts')->insert([
         	'name'=> Str::random(20),
-        	'icon' =>Str::random(10) . ".jpg",
         ]);
     }
 }

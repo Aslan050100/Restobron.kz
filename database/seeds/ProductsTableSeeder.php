@@ -19,7 +19,7 @@ class ProductsTableSeeder extends Seeder
             'address' =>Str::random(10),
             'seats' =>mt_rand(100,500),
             'rating' =>mt_rand(1,10),
-            'hall_id' =>mt_rand(1,9),
+            'hall_id' =>mt_rand(1,7),
             'city_id' =>mt_rand(1,1),
             'map'=>Str::random(20),
         ]);

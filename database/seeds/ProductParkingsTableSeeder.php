@@ -13,8 +13,8 @@ class ProductParkingsTableSeeder extends Seeder
     {
         //
         DB::table('pro_parkings')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'parking_id' => mt_rand(1,10),
+        	'pro_id' => mt_rand(2,10),
+        	'parking_id' => mt_rand(1,8),
         ]);
     }
 }

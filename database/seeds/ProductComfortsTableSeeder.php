@@ -13,8 +13,8 @@ class ProductComfortsTableSeeder extends Seeder
     {
         //
         DB::table('pro_coms')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'comfort_id' => mt_rand(1,10),
+        	'pro_id' => mt_rand(2,11),
+        	'comfort_id' => mt_rand(1,8),
         ]);
     }
 }

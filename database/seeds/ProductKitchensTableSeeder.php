@@ -13,8 +13,8 @@ class ProductKitchensTableSeeder extends Seeder
     {
         //
         DB::table('pro_kits')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'kitchen_id' => mt_rand(1,10),
+        	'pro_id' => mt_rand(2,11),
+        	'kitchen_id' => mt_rand(1,8),
         ]);
     }
 }

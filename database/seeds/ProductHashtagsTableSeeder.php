@@ -13,8 +13,8 @@ class ProductHashtagsTableSeeder extends Seeder
     {
         //
         DB::table('pro_hashes')->insert([
-        	'pro_id' => mt_rand(1,10),
-        	'hashtag_id' => mt_rand(1,10),
+        	'pro_id' => mt_rand(2,11),
+        	'hashtag_id' => mt_rand(1,8),
         ]);
     }
 }

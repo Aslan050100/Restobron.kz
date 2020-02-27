@@ -9,8 +9,14 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+//HashtagsTableSeeder::class,ParkingsTableSeeder::class,
+//HoursTableSeeder::class,KitchensTableSeeder::class,MenusTableSeeder::class,PaysTableSeeder::class,
+//ProductAverageChecksTableSeeder::class
     public function run()
     {
-        $this->call([HallDescriptionsTableSeeder::class,CitiesTableSeeder::class]);
+        $this->call([
+            ProductComfortsTableSeeder::class,ProductHashtagsTableSeeder::class,ProductImagesTableSeeder::class,
+            ProductKitchensTableSeeder::class,ProductParkingsTableSeeder::class,ProductPaysTableSeeder::class
+        ]);
     }
 }
