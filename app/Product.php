@@ -29,22 +29,22 @@ class Product extends Model
     	 return $this->hasMany('App\Product_image','pro_id','id');
     }
     public function pays(){
-         return $this->belongsToMany('App\Pay','pro_pays','pay_id','pro_id');
+         return $this->belongsToMany('App\Pay','pro_pays','pro_id','pay_id');
     }
     public function kitchens(){
          return $this->belongsToMany('App\Kitchen','pro_kits','pro_id','kitchen_id');
     }
     public function parkings(){
-         return $this->belongsToMany('App\Kitchen','pro_parkings','parking_id','pro_id');
+         return $this->belongsToMany('App\Parking','pro_parkings','pro_id','parking_id');
     }
     public function comforts(){
          return $this->belongsToMany('App\Comfort','pro_coms','pro_id','comfort_id');
     }
     public function hashtags(){
-         return $this->belongsToMany('App\Hashtag','pro_hashes','hashtag_id','pro_id');
+         return $this->belongsToMany('App\Hashtag','pro_hashes','pro_id','hashtag_id');
     }
     public function average_checks(){
-         return $this->belongsToMany('App\Average_check','pro_aves','average_id','pro_id');
+         return $this->belongsToMany('App\Average_check','pro_aves','pro_id','average_id');
     }
     public function reservations(){
          return $this->hasMany('App\Reservation','pro_id','id');

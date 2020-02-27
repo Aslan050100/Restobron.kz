@@ -12,6 +12,10 @@ use App\Http\Resources\Comfort as ComfortResource;
 use App\Http\Resources\Hour as HourResource;
 use App\Http\Resources\ProductImage as ProductImageResource;
 use App\Http\Resources\Feedback as FeedbackResource;
+use App\Http\Resources\Parking as ParkingResource;
+use App\Http\Resources\Pay as PayResource;
+use App\Http\Resources\Hashtag as HashtagResource;
+use App\Http\Resources\HallDescription as HallDescriptionResource;
 class Product extends JsonResource
 {
     /**
@@ -33,14 +37,16 @@ class Product extends JsonResource
             'video' =>$this->video,
             'rating' =>$this->rating,
             'map' =>$this->map,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
             'average_checks' => AverageCheckResource::collection($this->average_checks),
             'kitchens' => KitchenResource::collection($this->kitchens),
             'comforts' => ComfortResource::collection($this->comforts),
             'hours' => HourResource::collection($this->hours),
+            'parkings'=>ParkingResource::collection($this->parkings),
+            'pays'=>PayResource::collection($this->pays),
+            'hashtags'=>HashtagResource::collection($this->hashtags),
             'product_images' => ProductImageResource::collection($this->product_images),
             'feedbacks'=>FeedbackResource::collection($this->feedbacks),
+            'hall_description'=>new HallDescriptionResource($this->hall_description),
         ];
     }
 }
