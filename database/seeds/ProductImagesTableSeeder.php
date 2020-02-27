@@ -14,7 +14,7 @@ class ProductImagesTableSeeder extends Seeder
         //
         DB::table('product_images')->insert([
             'image' => Str::random(10)  . ".jpg",
-            'pro_id' =>mt_rand(2,5),
+            'pro_id' =>mt_rand(1,8),
         ]);
     }
 }

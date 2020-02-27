@@ -31,5 +31,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('productEdit/{id}',['as'=>'product.edit','uses'=>'ProductAdminController@edit']);
     Route::post('productStore',['as'=>'product.store','uses'=>'ProductAdminController@store']);
     Route::match(['post','get'],'productUpdate/{id}',['as'=>'product.update','uses'=>'ProductAdminController@update']);
+    //Ad
+    Route::get('ad',['as'=>'ad','uses'=>'AdAdminController@index']);
+    Route::get('adCreate',['as'=>'ad.create','uses'=>'AdAdminController@create']);
+    Route::match(['get','post'],'adDestroy/{id}',['as'=>'ad.destroy','uses'=>'AdAdminController@destroy']);
+    Route::get('adEdit/{id}',['as'=>'ad.edit','uses'=>'AdAdminController@edit']);
+    Route::post('adStore',['as'=>'ad.store','uses'=>'AdAdminController@store']);
+    Route::match(['post','get'],'adUpdate/{id}',['as'=>'ad.update','uses'=>'AdAdminController@update']);
 });
 

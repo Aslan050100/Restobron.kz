@@ -20,7 +20,7 @@ class HoursTableSeeder extends Seeder
             'friday' => "07:00 a.m - 01:00 a.m",
             'saturday' => "07:00 a.m - 01:00 a.m",
             'sunday' => "07:00 a.m - 01:00 a.m",
-            'pro_id' =>mt_rand(1,2),
+            'pro_id' =>mt_rand(1,8),
         ]);
     }
 }

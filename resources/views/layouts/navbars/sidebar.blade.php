@@ -84,6 +84,11 @@
                                     {{ __('Продукты') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('ad') }}">
+                                    {{ __('Новости') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
