@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Average')])
+@extends('layouts.app', ['title' => __('City')])
 
 @section('content')
     @include('layouts.headers.cards')
@@ -11,10 +11,10 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">{{ __('Средний чек') }}</h3>
+                                    <h3 class="mb-0">{{ __('Город') }}</h3>
                                 </div>
                                 <div class="col-4 text-right">
-                                    <a href="{{ route('average_checks.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить средний чек') }}</a>
+                                    <a href="{{ route('city.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить город') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -34,27 +34,27 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Цена') }}</th>
+                                    <th scope="col">{{ __('Имя') }}</th>
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($avgs as $avg)
+                                @foreach ($cities as $city)
                                     <tr>
-                                        <td>{{ $avg->price }}</td>
-                                        <td>{{ $avg->created_at}}</td>
-                                        <td>{{ $avg->updated_at}}</td>
+                                        <td>{{ $city->name }}</td>
+                                        <td>{{ $city->created_at}}</td>
+                                        <td>{{ $city->updated_at}}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <form action="{{ route('avg.destroy', $avg->id) }}" method="post">
+                                                    <form action="{{ route('city.destroy', $city->id) }}" method="post">
                                                         @csrf
-                                                        <a class="dropdown-item" href="{{ route('average_checks.edit', $avg->id) }}">{{ __('Изменить') }}</a>
+                                                        <a class="dropdown-item" href="{{ route('city.edit', $city->id) }}">{{ __('Изменить') }}</a>
                                                         <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Удалить') }}
                                                         </button>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="card-footer py-4">
                             <nav class="d-flex justify-content-end" aria-label="...">
-                                {{ $avgs->links() }}
+                                {{ $cities->links() }}
                             </nav>
                         </div>
                     </div>

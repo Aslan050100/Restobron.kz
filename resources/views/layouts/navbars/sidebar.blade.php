@@ -90,12 +90,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('average_checks') }}">
+                                <a class="nav-link" href="{{ route('average_check') }}">
                                     {{ __('Средний чек') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cities') }}">
+                                <a class="nav-link" href="{{ route('city') }}">
                                     {{ __('Город') }}
                                 </a>
                             </li>

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Average_checks Management')])
+@extends('layouts.app', ['title' => __('Average_check Management')])
 
 @section('content')
     @include('users.partials.header', ['title' => __('Добавить средний чек')])
@@ -13,12 +13,12 @@
                                 <h3 class="mb-0">{{ __('Управление среднeм чеком') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('average_checks') }}" class="btn btn-sm btn-primary">{{ __('Назад') }}</a>
+                                <a href="{{ route('average_check') }}" class="btn btn-sm btn-primary">{{ __('Назад') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('average_checks.store') }}" autocomplete="off" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('average_check.store') }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Информация о среднем чеком') }}</h6>
