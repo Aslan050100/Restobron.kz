@@ -94,7 +94,7 @@ class ProductAdminController extends Controller
             $product->city_id = $req->city;
             $product->hall_id = $req->hall_desc;
             $product->video = $profileVideo;
-            $product->save();
+            $product->save();  
 
             return redirect()->back()->with('alert', 'Data updated!');
         }

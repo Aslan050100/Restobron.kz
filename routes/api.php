@@ -25,3 +25,8 @@ Route::get('/getPrices','ProductController@getPrice');
 Route::get('/getKitchens','ProductController@getKitchens');
 Route::get('/getComforts','ProductController@getComforts');
 Route::get('/getProductById/{id}','ProductController@getProductById');
+Route::get('/getHashtags','HashtagController@getHashtags');
+Route::get('/getMenus','MenuController@getMenus');
+Route::match(['get','post'],'/register','RegistratorController@store');
+Route::match(['get','post'],'/login','MainUserController@store');
+Route::match(['get','post'],'/logout','MainUserController@destroy');
