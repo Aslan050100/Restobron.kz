@@ -89,6 +89,16 @@
                                     {{ __('Новости') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('average_checks') }}">
+                                    {{ __('Средний чек') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('cities') }}">
+                                    {{ __('Город') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
