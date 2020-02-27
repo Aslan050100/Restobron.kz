@@ -39,12 +39,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('adStore',['as'=>'ad.store','uses'=>'AdAdminController@store']);
     Route::match(['post','get'],'adUpdate/{id}',['as'=>'ad.update','uses'=>'AdAdminController@update']);
     //Average_checks
-    Route::get('avg',['as'=>'average_check','uses'=>'Average_checkAdminController@index']);
-    Route::get('avgCreate',['as'=>'average_check.create','uses'=>'Average_checkAdminController@create']);
-    Route::match(['get','post'],'average_checkDestroy/{id}',['as'=>'avg.destroy','uses'=>'Average_checkAdminController@destroy']);
-    Route::get('avgEdit/{id}',['as'=>'average_check.edit','uses'=>'Average_checkAdminController@edit']);
-    Route::post('avgStore',['as'=>'average_check.store','uses'=>'Average_checkAdminController@store']);
-    Route::match(['post','get'],'average_checkUpdate/{id}',['as'=>'average_check.update','uses'=>'Average_checkAdminController@update']);
+    Route::get('avg',['as'=>'average_check','uses'=>'AverageСheckAdminController@index']);
+    Route::get('avgCreate',['as'=>'average_check.create','uses'=>'AverageСheckAdminController@create']);
+    Route::match(['get','post'],'average_checkDestroy/{id}',['as'=>'avg.destroy','uses'=>'AverageСheckAdminController@destroy']);
+    Route::get('avgEdit/{id}',['as'=>'average_check.edit','uses'=>'AverageСheckAdminController@edit']);
+    Route::post('avgStore',['as'=>'average_check.store','uses'=>'AverageСheckAdminController@store']);
+    Route::match(['post','get'],'average_checkUpdate/{id}',['as'=>'average_check.update','uses'=>'AverageСheckAdminController@update']);
     //City
     Route::get('city',['as'=>'city','uses'=>'CityAdminController@index']);
     Route::get('cityCreate',['as'=>'city.create','uses'=>'CityAdminController@create']);
@@ -52,5 +52,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('cityEdit/{id}',['as'=>'city.edit','uses'=>'CityAdminController@edit']);
     Route::post('cityStore',['as'=>'city.store','uses'=>'CityAdminController@store']);
     Route::match(['post','get'],'cityUpdate/{id}',['as'=>'city.update','uses'=>'CityAdminController@update']);
+    //Comforts
+    Route::get('comfort',['as'=>'comfort','uses'=>'ComfortAdminController@index']);
+    Route::get('comfortCreate',['as'=>'comfort.create','uses'=>'ComfortAdminController@create']);
+    Route::match(['get','post'],'comfortDestroy/{id}',['as'=>'comfort.destroy','uses'=>'ComfortAdminController@destroy']);
+    Route::get('comfortEdit/{id}',['as'=>'comfort.edit','uses'=>'ComfortAdminController@edit']);
+    Route::post('comfortStore',['as'=>'comfort.store','uses'=>'ComfortAdminController@store']);
+    Route::match(['post','get'],'comfortUpdate/{id}',['as'=>'comfort.update','uses'=>'ComfortAdminController@update']);
+    //Dish_types
+    Route::get('dish_type',['as'=>'dish_type','uses'=>'DishTypeAdminController@index']);
+    Route::get('cdish_typeCreate',['as'=>'dish_type.create','uses'=>'DishTypeAdminController@create']);
+    Route::match(['get','post'],'cdish_typeDestroy/{id}',['as'=>'dish_type.destroy','uses'=>'DishTypeAdminController@destroy']);
+    Route::get('cdish_typeEdit/{id}',['as'=>'dish_type.edit','uses'=>'DishTypeAdminController@edit']);
+    Route::post('dish_typeStore',['as'=>'dish_type.store','uses'=>'DishTypeAdminController@store']);
+    Route::match(['post','get'],'dish_typeUpdate/{id}',['as'=>'dish_type.update','uses'=>'DishTypeAdminController@update']);
 });
 
