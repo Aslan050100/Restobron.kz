@@ -38,5 +38,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('adEdit/{id}',['as'=>'ad.edit','uses'=>'AdAdminController@edit']);
     Route::post('adStore',['as'=>'ad.store','uses'=>'AdAdminController@store']);
     Route::match(['post','get'],'adUpdate/{id}',['as'=>'ad.update','uses'=>'AdAdminController@update']);
+    //Average_checks
+    Route::get('avg',['as'=>'average_check','uses'=>'Average_checkAdminController@index']);
+    Route::get('avgCreate',['as'=>'average_check.create','uses'=>'Average_checkAdminController@create']);
+    Route::match(['get','post'],'average_checkDestroy/{id}',['as'=>'avg.destroy','uses'=>'Average_checkAdminController@destroy']);
+    Route::get('avgEdit/{id}',['as'=>'average_check.edit','uses'=>'Average_checkAdminController@edit']);
+    Route::post('avgStore',['as'=>'average_check.store','uses'=>'Average_checkAdminController@store']);
+    Route::match(['post','get'],'average_checkUpdate/{id}',['as'=>'average_check.update','uses'=>'Average_checkAdminController@update']);
+    //City
+    Route::get('city',['as'=>'city','uses'=>'CityAdminController@index']);
+    Route::get('cityCreate',['as'=>'city.create','uses'=>'CityAdminController@create']);
+    Route::match(['get','post'],'cityDestroy/{id}',['as'=>'city.destroy','uses'=>'CityAdminController@destroy']);
+    Route::get('cityEdit/{id}',['as'=>'city.edit','uses'=>'CityAdminController@edit']);
+    Route::post('cityStore',['as'=>'city.store','uses'=>'CityAdminController@store']);
+    Route::match(['post','get'],'cityUpdate/{id}',['as'=>'city.update','uses'=>'CityAdminController@update']);
 });
 
