@@ -18,15 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/getProducts','ProductController@getProducts');
-Route::get('/getAds','AdController@getAds');
-Route::get('/getFeedbacks','FeedbackController@getFeedbacks');
-Route::get('/getPrices','ProductController@getPrice');
-Route::get('/getKitchens','ProductController@getKitchens');
-Route::get('/getComforts','ProductController@getComforts');
-Route::get('/getProductById/{id}','ProductController@getProductById');
-Route::get('/getHashtags','HashtagController@getHashtags');
-Route::get('/getMenus','MenuController@getMenus');
-Route::match(['get','post'],'/register','RegistratorController@store');
-Route::match(['get','post'],'/login','MainUserController@store');
-Route::match(['get','post'],'/logout','MainUserController@destroy');
+Route::get('/getProducts','ProductController@getProducts')->middleware('cors');
+Route::get('/getAds','AdController@getAds')->middleware('cors');
+Route::get('/getFeedbacks','FeedbackController@getFeedbacks')->middleware('cors');
+Route::get('/getPrices','ProductController@getPrice')->middleware('cors');
+Route::get('/getKitchens','ProductController@getKitchens')->middleware('cors');
+Route::get('/getComforts','ProductController@getComforts')->middleware('cors');
+Route::get('/getProductById/{id}','ProductController@getProductById')->middleware('cors');
+Route::get('/getHashtags','HashtagController@getHashtags')->middleware('cors');
+Route::get('/getMenus','MenuController@getMenus')->middleware('cors');
+Route::match(['get','post'],'/register','RegistratorController@store')->middleware('cors');
+Route::match(['get','post'],'/login','MainUserController@store')->middleware('cors');
+Route::match(['get','post'],'/logout','MainUserController@destroy')->middleware('cors');
