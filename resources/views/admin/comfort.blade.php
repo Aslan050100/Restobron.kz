@@ -55,7 +55,7 @@
                                                     <form action="{{ route('comfort.destroy', $comfort->id) }}" method="post">
                                                         @csrf
                                                         <a class="dropdown-item" href="{{ route('comfort.edit', $comfort->id) }}">{{ __('Изменить') }}</a>
-                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
+                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this comfort?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Удалить') }}
                                                         </button>
                                                     </form>

@@ -106,7 +106,32 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dish_type') }}">
-                                    {{ __('Типы блюда') }}
+                                    {{ __('Типы блюд') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('hall_description') }}">
+                                    {{ __('Описания залов') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('hashtag') }}">
+                                    {{ __('Хэштеги') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('parking') }}">
+                                    {{ __('Стоянки') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pay') }}">
+                                    {{ __('Оплаты') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('kitchen') }}">
+                                    {{ __('Кухни') }}
                                 </a>
                             </li>
                         </ul>

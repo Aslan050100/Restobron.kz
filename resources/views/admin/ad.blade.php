@@ -59,7 +59,7 @@
                                                     <form action="{{ route('ad.destroy', $ad->id) }}" method="post">
                                                         @csrf
                                                         <a class="dropdown-item" href="{{ route('ad.edit', $ad->id) }}">{{ __('Изменить') }}</a>
-                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
+                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this ad?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Удалить') }}
                                                         </button>
                                                     </form>

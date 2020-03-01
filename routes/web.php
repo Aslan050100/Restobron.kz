@@ -61,10 +61,45 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['post','get'],'comfortUpdate/{id}',['as'=>'comfort.update','uses'=>'ComfortAdminController@update']);
     //Dish_types
     Route::get('dish_type',['as'=>'dish_type','uses'=>'DishTypeAdminController@index']);
-    Route::get('cdish_typeCreate',['as'=>'dish_type.create','uses'=>'DishTypeAdminController@create']);
-    Route::match(['get','post'],'cdish_typeDestroy/{id}',['as'=>'dish_type.destroy','uses'=>'DishTypeAdminController@destroy']);
-    Route::get('cdish_typeEdit/{id}',['as'=>'dish_type.edit','uses'=>'DishTypeAdminController@edit']);
+    Route::get('dish_typeCreate',['as'=>'dish_type.create','uses'=>'DishTypeAdminController@create']);
+    Route::match(['get','post'],'dish_typeDestroy/{id}',['as'=>'dish_type.destroy','uses'=>'DishTypeAdminController@destroy']);
+    Route::get('dish_typeEdit/{id}',['as'=>'dish_type.edit','uses'=>'DishTypeAdminController@edit']);
     Route::post('dish_typeStore',['as'=>'dish_type.store','uses'=>'DishTypeAdminController@store']);
     Route::match(['post','get'],'dish_typeUpdate/{id}',['as'=>'dish_type.update','uses'=>'DishTypeAdminController@update']);
+    //Hall_descriptions
+    Route::get('hall_description',['as'=>'hall_description','uses'=>'HallDescriptionAdminController@index']);
+    Route::get('hall_descriptionCreate',['as'=>'hall_description.create','uses'=>'HallDescriptionAdminController@create']);
+    Route::match(['get','post'],'hall_descriptionDestroy/{id}',['as'=>'hall_description.destroy','uses'=>'HallDescriptionAdminController@destroy']);
+    Route::get('hall_descriptionEdit/{id}',['as'=>'hall_description.edit','uses'=>'HallDescriptionAdminController@edit']);
+    Route::post('hall_descriptionStore',['as'=>'hall_description.store','uses'=>'HallDescriptionAdminController@store']);
+    Route::match(['post','get'],'hall_descriptionUpdate/{id}',['as'=>'hall_description.update','uses'=>'HallDescriptionAdminController@update']);
+    //Pay
+    Route::get('pay',['as'=>'pay','uses'=>'PayAdminController@index']);
+    Route::get('payCreate',['as'=>'pay.create','uses'=>'PayAdminController@create']);
+    Route::match(['get','post'],'payDestroy/{id}',['as'=>'pay.destroy','uses'=>'PayAdminController@destroy']);
+    Route::get('payEdit/{id}',['as'=>'pay.edit','uses'=>'PayAdminController@edit']);
+    Route::post('payStore',['as'=>'pay.store','uses'=>'PayAdminController@store']);
+    Route::match(['post','get'],'payUpdate/{id}',['as'=>'pay.update','uses'=>'PayAdminController@update']);
+    //Parking
+    Route::get('parking',['as'=>'parking','uses'=>'ParkingAdminController@index']);
+    Route::get('parkingCreate',['as'=>'parking.create','uses'=>'ParkingAdminController@create']);
+    Route::match(['get','post'],'parkingDestroy/{id}',['as'=>'parking.destroy','uses'=>'ParkingAdminController@destroy']);
+    Route::get('parkingEdit/{id}',['as'=>'parking.edit','uses'=>'ParkingAdminController@edit']);
+    Route::post('parkingStore',['as'=>'parking.store','uses'=>'ParkingAdminController@store']);
+    Route::match(['post','get'],'parkingUpdate/{id}',['as'=>'parking.update','uses'=>'ParkingAdminController@update']);
+    //Kitchen
+    Route::get('kitchen',['as'=>'kitchen','uses'=>'KitchenAdminController@index']);
+    Route::get('kitchenCreate',['as'=>'kitchen.create','uses'=>'KitchenAdminController@create']);
+    Route::match(['get','post'],'kitchenDestroy/{id}',['as'=>'kitchen.destroy','uses'=>'KitchenAdminController@destroy']);
+    Route::get('kitchenEdit/{id}',['as'=>'kitchen.edit','uses'=>'KitchenAdminController@edit']);
+    Route::post('kitchenStore',['as'=>'kitchen.store','uses'=>'KitchenAdminController@store']);
+    Route::match(['post','get'],'kitchenUpdate/{id}',['as'=>'kitchen.update','uses'=>'KitchenAdminController@update']);
+    //Hashtag
+    Route::get('hashtag',['as'=>'hashtag','uses'=>'HashtagAdminController@index']);
+    Route::get('hashtagCreate',['as'=>'hashtag.create','uses'=>'HashtagAdminController@create']);
+    Route::match(['get','post'],'hashtagDestroy/{id}',['as'=>'hashtag.destroy','uses'=>'HashtagAdminController@destroy']);
+    Route::get('hashtagEdit/{id}',['as'=>'hashtag.edit','uses'=>'HashtagAdminController@edit']);
+    Route::post('hashtagStore',['as'=>'hashtag.store','uses'=>'HashtagAdminController@store']);
+    Route::match(['post','get'],'hashtagUpdate/{id}',['as'=>'hashtag.update','uses'=>'HashtagAdminController@update']);
 });
 

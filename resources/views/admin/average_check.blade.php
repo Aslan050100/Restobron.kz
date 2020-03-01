@@ -55,7 +55,7 @@
                                                     <form action="{{ route('avg.destroy', $avg->id) }}" method="post">
                                                         @csrf
                                                         <a class="dropdown-item" href="{{ route('average_check.edit', $avg->id) }}">{{ __('Изменить') }}</a>
-                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
+                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this average check?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Удалить') }}
                                                         </button>
                                                     </form>

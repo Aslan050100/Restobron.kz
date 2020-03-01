@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Dish_type')])
+@extends('layouts.app', ['title' => __('Hall_description')])
 
 @section('content')
     @include('layouts.headers.cards')
@@ -11,10 +11,10 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">{{ __('Тип блюда') }}</h3>
+                                    <h3 class="mb-0">{{ __('Описание зала') }}</h3>
                                 </div>
                                 <div class="col-4 text-right">
-                                    <a href="{{ route('dish_type.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить тип блюда') }}</a>
+                                    <a href="{{ route('hall_description.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить описание зала') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -41,21 +41,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($dish_types as $dish_type)
+                                @foreach ($hall_descriptions as $hall_description)
                                     <tr>
-                                        <td>{{ $dish_type->name }}</td>
-                                        <td>{{ $dish_type->created_at}}</td>
-                                        <td>{{ $dish_type->updated_at}}</td>
+                                        <td>{{ $hall_description->name }}</td>
+                                        <td>{{ $hall_description->created_at}}</td>
+                                        <td>{{ $hall_description->updated_at}}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <form action="{{ route('dish_type.destroy', $dish_type->id) }}" method="post">
+                                                    <form action="{{ route('hall_description.destroy', $hall_description->id) }}" method="post">
                                                         @csrf
-                                                        <a class="dropdown-item" href="{{ route('dish_type.edit', $dish_type->id) }}">{{ __('Изменить') }}</a>
-                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this dish type?") }}') ? this.parentElement.submit() : ''">
+                                                        <a class="dropdown-item" href="{{ route('hall_description.edit', $hall_description->id) }}">{{ __('Изменить') }}</a>
+                                                        <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this hall description?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Удалить') }}
                                                         </button>
                                                     </form>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="card-footer py-4">
                             <nav class="d-flex justify-content-end" aria-label="...">
-                                {{ $dish_types->links() }}
+                                {{ $hall_descriptions->links() }}
                             </nav>
                         </div>
                     </div>
