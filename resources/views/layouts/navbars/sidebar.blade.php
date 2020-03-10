@@ -134,6 +134,21 @@
                                     {{ __('Кухни') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('feedback') }}">
+                                    {{ __('Отзывы') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('product_image') }}">
+                                    {{ __('Фото продукта') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('hour') }}">
+                                    {{ __('Время') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

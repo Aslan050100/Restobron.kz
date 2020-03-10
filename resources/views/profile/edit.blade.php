@@ -2,8 +2,8 @@
 
 @section('content')
     @include('users.partials.header', [
-        'title' => __('Hello') . ' '. auth()->user()->name,
-        'description' => __('This is your profile page. You can see the progress you\'ve made with your work and manage your projects or assigned tasks'),
+        'title' => __('Здравствуйте') . ' '. auth()->user()->name,
+        'description' => __('Это страница вашего профиля. Вы можете видеть прогресс достигнутый вами в вашей работе, и управлять своими проектами или назначенными задачами.'),
         'class' => 'col-lg-7'
     ])
 
@@ -14,7 +14,7 @@
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
-                            <h3 class="col-12 mb-0">{{ __('Edit Profile') }}</h3>
+                            <h3 class="col-12 mb-0">{{ __('Редактировать профиль') }}</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -22,7 +22,7 @@
                             @csrf
                             @method('put')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Информация о пользователе') }}</h6>
 
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">

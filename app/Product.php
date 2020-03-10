@@ -26,7 +26,7 @@ class Product extends Model
     	 return $this->hasMany('App\Menu','pro_id','id');
     }
     public function product_images(){
-    	 return $this->hasMany('App\Product_image','pro_id','id');
+    	 return $this->hasMany('App\Product_image','id','pro_id');
     }
     public function pays(){
          return $this->belongsToMany('App\Pay','pro_pays','pro_id','pay_id');

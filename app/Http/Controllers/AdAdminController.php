@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\City;
-use App\Hall_description;
 use App\Ad;
 use App\Product;
 use Illuminate\Http\Request;
@@ -20,7 +17,8 @@ class AdAdminController extends Controller
     public function create()
     {
         $ads = Ad::all();
-        return view('admin.ad_create',['ads'=>$ads]);
+        $products = Product::all();
+        return view('admin.ad_create',['ads'=>$ads,'products'=>$products]);
     }
 
     public function store(Request $req){
