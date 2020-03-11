@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Ad')])
+@extends('layouts.app', ['title' => __('Product_image')])
 
 @section('content')
     @include('users.partials.header', ['title' => __('Изменить Объявление')])
@@ -10,32 +10,22 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Объявление') }}</h3>
+                                <h3 class="mb-0">{{ __('Фото продукта') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('ad') }}" class="btn btn-sm btn-primary">{{ __('Назад') }}</a>
+                                <a href="{{ route('product_image') }}" class="btn btn-sm btn-primary">{{ __('Назад') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('ad.update', $ad->id) }}" autocomplete="off" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('product_image.update', $product_image->id) }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
-                            <h6 class="heading-small text-muted mb-4">{{ __('Информация о объявлений') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Информация о фото продукта') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-name">{{ __('Имя') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative" placeholder="{{ __('Name') }}" value="{{$product->name }}" required autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-description">{{ __('Описания') }}</label>
-                                    <input class="form-control form-control-alternative" value="{{ $ad->description}}" type="textarea" name="desc" placeholder="Enter text here...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Продукт') }}</label>
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Фото продукта') }}</label>
                                     <select name='product' class="browser-default custom-select">
-                                        <option selected value="{{$ad->products->id}}">{{$ad->products->name}}</option>
+                                        <option selected value="{{$product_image->products->id}}">{{$product_image->products->name}}</option>
                                         @foreach($products as $product)
                                             <option value="{{$product->id}}">{{$product->name}}</option>
                                         @endforeach

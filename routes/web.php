@@ -101,5 +101,26 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('hashtagEdit/{id}',['as'=>'hashtag.edit','uses'=>'HashtagAdminController@edit']);
     Route::post('hashtagStore',['as'=>'hashtag.store','uses'=>'HashtagAdminController@store']);
     Route::match(['post','get'],'hashtagUpdate/{id}',['as'=>'hashtag.update','uses'=>'HashtagAdminController@update']);
+    //Feedback
+    Route::get('feedback',['as'=>'feedback','uses'=>'FeedbackAdminController@index']);
+    Route::get('feedbackCreate',['as'=>'feedback.create','uses'=>'FeedbackAdminController@create']);
+    Route::match(['get','post'],'feedbackDestroy/{id}',['as'=>'feedback.destroy','uses'=>'FeedbackAdminController@destroy']);
+    Route::get('feedbackEdit/{id}',['as'=>'feedback.edit','uses'=>'FeedbackAdminController@edit']);
+    Route::post('feedbackStore',['as'=>'feedback.store','uses'=>'FeedbackAdminController@store']);
+    Route::match(['post','get'],'feedbackUpdate/{id}',['as'=>'feedback.update','uses'=>'FeedbackAdminController@update']);
+    //Product_image
+    Route::get('product_image',['as'=>'product_image','uses'=>'ProductImageAdminController@index']);
+    Route::get('product_imageCreate',['as'=>'product_image.create','uses'=>'ProductImageAdminController@create']);
+    Route::match(['get','post'],'product_imageDestroy/{id}',['as'=>'product_image.destroy','uses'=>'ProductImageAdminController@destroy']);
+    Route::get('product_imageEdit/{id}',['as'=>'product_image.edit','uses'=>'ProductImageAdminController@edit']);
+    Route::post('product_imageStore',['as'=>'product_image.store','uses'=>'ProductImageAdminController@store']);
+    Route::match(['post','get'],'product_imageUpdate/{id}',['as'=>'product_image.update','uses'=>'ProductImageAdminController@update']);
+    //Hour
+    Route::get('hour',['as'=>'hour','uses'=>'HourAdminController@index']);
+    Route::get('hourCreate',['as'=>'hour.create','uses'=>'HourAdminController@create']);
+    Route::match(['get','post'],'hourDestroy/{id}',['as'=>'hour.destroy','uses'=>'HourAdminController@destroy']);
+    Route::get('hourEdit/{id}',['as'=>'hour.edit','uses'=>'HourAdminController@edit']);
+    Route::post('hourStore',['as'=>'hour.store','uses'=>'HourAdminController@store']);
+    Route::match(['post','get'],'hourUpdate/{id}',['as'=>'hour.update','uses'=>'HourAdminController@update']);
 });
 
