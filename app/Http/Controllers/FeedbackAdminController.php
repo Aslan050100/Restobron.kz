@@ -15,31 +15,6 @@ class FeedbackAdminController extends Controller
         //dd($products);
         return view('admin.feedback', ['feedbacks' => $feedbacks]);
     }
-
-    public function create(){
-        $products = Product::all();
-        $feedbacks = Feedback::all();
-        $users = User::all();
-        return view('admin.feedback_create', ['feedbacks' => $feedbacks,'products'=>$products,'users'=>$users]);
-    }
-    public function store(Request $req){
-        //dd($req);
-        if ($files = $req->image) {
-            //dd(123);
-            $destinationPath = 'assets/images';      // upload path
-            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
-            $files->move($destinationPath, $profileImage);
-            $insert['image'] = "$profileImage";
-        }
-        $feedback = new Feedback();
-        $feedback->comment = $req->comment;
-        $feedback->user_id = $req->user;
-        $feedback->pro_id = $req->product;
-        $feedback->image = $profileImage;
-        $feedback->save();
-        return redirect()->back()->with('alert', 'Data inserted!');
-    }
-
     public function edit(Request $req, $id){
         $feedback = Feedback::where('id',$id)->first();
         $product = Product::where('id',$feedback->pro_id)->first();

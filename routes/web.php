@@ -103,11 +103,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['post','get'],'hashtagUpdate/{id}',['as'=>'hashtag.update','uses'=>'HashtagAdminController@update']);
     //Feedback
     Route::get('feedback',['as'=>'feedback','uses'=>'FeedbackAdminController@index']);
-    Route::get('feedbackCreate',['as'=>'feedback.create','uses'=>'FeedbackAdminController@create']);
     Route::match(['get','post'],'feedbackDestroy/{id}',['as'=>'feedback.destroy','uses'=>'FeedbackAdminController@destroy']);
     Route::get('feedbackEdit/{id}',['as'=>'feedback.edit','uses'=>'FeedbackAdminController@edit']);
-    Route::post('feedbackStore',['as'=>'feedback.store','uses'=>'FeedbackAdminController@store']);
-    Route::match(['post','get'],'feedbackUpdate/{id}',['as'=>'feedback.update','uses'=>'FeedbackAdminController@update']);
+     Route::match(['post','get'],'feedbackUpdate/{id}',['as'=>'feedback.update','uses'=>'FeedbackAdminController@update']);
     //Product_image
     Route::get('product_image',['as'=>'product_image','uses'=>'ProductImageAdminController@index']);
     Route::get('product_imageCreate',['as'=>'product_image.create','uses'=>'ProductImageAdminController@create']);
@@ -122,5 +120,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('hourEdit/{id}',['as'=>'hour.edit','uses'=>'HourAdminController@edit']);
     Route::post('hourStore',['as'=>'hour.store','uses'=>'HourAdminController@store']);
     Route::match(['post','get'],'hourUpdate/{id}',['as'=>'hour.update','uses'=>'HourAdminController@update']);
+    //Reservation
+    Route::get('reservation',['as'=>'reservation','uses'=>'ReservationAdminController@index']);
+    Route::match(['get','post'],'reservationDestroy/{id}',['as'=>'reservation.destroy','uses'=>'ReservationAdminController@destroy']);
+
+    //Menu
+    Route::get('menu',['as'=>'menu','uses'=>'MenuAdminController@index']);
+    Route::get('menuCreate',['as'=>'menu.create','uses'=>'MenuAdminController@create']);
+    Route::match(['get','post'],'menuDestroy/{id}',['as'=>'menu.destroy','uses'=>'MenuAdminController@destroy']);
+    Route::get('menuEdit/{id}',['as'=>'menu.edit','uses'=>'MenuAdminController@edit']);
+    Route::post('menuStore',['as'=>'menu.store','uses'=>'MenuAdminController@store']);
+    Route::match(['post','get'],'menuUpdate/{id}',['as'=>'menu.update','uses'=>'MenuAdminController@update']);
+    //Menu_order
+    Route::get('menu_order',['as'=>'menu_order','uses'=>'MenuOrderAdminController@index']);
+    Route::match(['get','post'],'menu_orderDestroy/{id}',['as'=>'menu_order.destroy','uses'=>'MenuOrderAdminController@destroy']);
 });
 

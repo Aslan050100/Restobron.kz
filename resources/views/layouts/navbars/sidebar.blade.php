@@ -149,6 +149,21 @@
                                     {{ __('Время') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('reservation') }}">
+                                    {{ __('Бронь') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('menu') }}">
+                                    {{ __('Меню') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('menu_order') }}">
+                                    {{ __('Заказ меню') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

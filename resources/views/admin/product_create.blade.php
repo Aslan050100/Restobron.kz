@@ -48,10 +48,6 @@
                                     <input type="text" name="address" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Адрес') }}" value="{{ old('map') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-map">{{ __('Дата открытие') }}</label>
-                                    <input type="text" name="data_open" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Дата открытие') }}" value="{{ old('map') }}" required>
-                                </div>
-                                <div class="form-group">
                                     <label class="form-control-label" for="input-map">{{ __('Место') }}</label>
                                     <input type="text" name="seats" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Место') }}" value="{{ old('map') }}" required>
                                 </div>
@@ -76,12 +72,6 @@
 
                                     </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-map">{{ __('Видео') }}</label>
-                                    <input type="file" name="video" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Видео') }}" value="{{ old('image') }}" required>
-                                </div>
-
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Сохранить') }}</button>
                                 </div>

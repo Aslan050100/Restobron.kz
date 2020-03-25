@@ -32,11 +32,71 @@
                                         @foreach($products as $product)
                                             <option value="{{$product->id}}">{{$product->name}}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Monday') }}</label>
+                                    <select name='monday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Tuesday') }}</label>
+                                    <select name='tuesday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Wednesday') }}</label>
+                                    <select name='wednesday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Thursday') }}</label>
+                                    <select name='thursday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Friday') }}</label>
+                                    <select name='friday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Saturday') }}</label>
+                                    <select name='saturday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Sunday') }}</label>
+                                    <select name='sunday' class="browser-default custom-select">
+                                        <option selected>Откройте это меню выбора</option>
+                                        @foreach($weeks as $week)
+                                            <option value="{{$week->hour}}">{{$week->hour}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Сохранить') }}</button>
                                 </div>

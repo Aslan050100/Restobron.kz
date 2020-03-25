@@ -35,7 +35,7 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">{{ __('Имя') }}</th>
-                                <th scope="col">{{ __('Описания') }}</th>
+                                <th scope="col">{{ __('Адрес') }}</th>
                                 <th scope="col">{{ __('Дата создания') }}</th>
                                 <th scope="col">{{ __('Дата обновления') }}</th>
                                 <th scope="col"></th>
@@ -46,7 +46,7 @@
                                 <tr>
                                     <td>{{ $product->name }}</td>
                                     <td>
-                                        <a>{{ $product->description }}</a>
+                                        <a>{{ $product->address }}</a>
                                     </td>
                                     <td>{{ $product->created_at}}</td>
                                     <td>{{ $product->updated_at}}</td>

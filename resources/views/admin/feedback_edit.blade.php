@@ -23,7 +23,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-comment">{{ __('Комментарий') }}</label>
-                                    <input class="form-control form-control-alternative" type="textarea" name="desc" placeholder="Введите текст здесь ...">
+                                    <input class="form-control form-control-alternative" type="textarea" name="desc" placeholder="Введите текст здесь ..." value="{{$feedback->comment}}">
                                 </div>
 
                                 <div class="form-group">
@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-password-confirmation">{{ __('Продукт') }}</label>
                                     <select name='product' class="browser-default custom-select">
-                                        <option selected>Откройте это меню выбора</option>
+                                        <option selected>{{$feedback->products->name}}</option>
                                         @foreach($products as $product)
                                             <option value="{{$product->id}}">{{$product->name}}</option>
                                         @endforeach
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-password-confirmation">{{ __('Пользователь') }}</label>
                                     <select name='user' class="browser-default custom-select">
-                                        <option selected>Откройте это меню выбора</option>
+                                        <option selected>{{$feedback->user->name}}</option>
                                         @foreach($users as $user)
                                             <option value="{{$user->id}}">{{$user->name}}</option>
                                         @endforeach

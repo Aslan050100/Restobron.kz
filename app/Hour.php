@@ -10,6 +10,6 @@ class Hour extends Model
      protected $table = 'hours';
 
      public function products(){
-    	 return $this->belongsTo('App\Product','id','pro_id');
+    	 return $this->belongsTo('App\Product','pro_id','id');
     }
 }

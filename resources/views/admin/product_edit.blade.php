@@ -47,10 +47,6 @@
                                     <input type="text" name="address" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Адрес') }}" value="{{ $product->address }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-map">{{ __('Дата открытие') }}</label>
-                                    <input type="text" name="data_open" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Дата открытие') }}" value="{{ $product->data_open }}" required>
-                                </div>
-                                <div class="form-group">
                                     <label class="form-control-label" for="input-map">{{ __('Место') }}</label>
                                     <input type="text" name="seats" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Место') }}" value="{{ $product->seats }}" required>
                                 </div>
@@ -74,11 +70,6 @@
                                         @endforeach
 
                                     </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-map">{{ __('Видео') }}</label>
-                                    <input type="file" name="video" id="input-map" class="form-control form-control-alternative" placeholder="{{ __('Видео') }}" value="{{ old('image') }}">
                                 </div>
 
                                 <div class="text-center">

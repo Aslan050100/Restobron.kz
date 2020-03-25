@@ -13,9 +13,7 @@
                                 <div class="col-8">
                                     <h3 class="mb-0">{{ __('Отзыв') }}</h3>
                                 </div>
-                                <div class="col-4 text-right">
-                                    <a href="{{ route('feedback.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить отзыв') }}</a>
-                                </div>
+
                             </div>
                         </div>
 
@@ -34,8 +32,9 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Имя') }}</th>
-                                    <th scope="col">{{ __('Описания') }}</th>
+                                    <th scope="col">{{ __('User') }}</th>
+                                    <th scope="col">{{ __('Product') }}</th>
+                                    <th scope="col">{{ __('Коммент') }}</th>
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
@@ -44,10 +43,9 @@
                                 <tbody>
                                 @foreach ($feedbacks as $feedback)
                                     <tr>
-                                        <td>{{ $feedback->name }}</td>
-                                        <td>
-                                            <a>{{ $feedback->description }}</a>
-                                        </td>
+                                        <td>{{ $feedback->user->name }}</td>
+                                        <td>{{ $feedback->products->name }}</td>
+                                        <td>{{ $feedback->comment }}</td>
                                         <td>{{ $feedback->created_at}}</td>
                                         <td>{{ $feedback->updated_at}}</td>
                                         <td class="text-right">

@@ -50,7 +50,7 @@ class AdAdminController extends Controller
         //dd($req);
         if ($files = $req->file('image')) {
             //dd(123);
-            $destinationPath = 'assets/products';      // upload path
+            $destinationPath = 'assets/images';      // upload path
             $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
             $files->move($destinationPath, $profileImage);
             $insert['image'] = "$profileImage";
@@ -71,7 +71,7 @@ class AdAdminController extends Controller
             $ad->name = $req->name;
             $ad->description = $req->desc;
             $ad->pro_id = $req->product;
-            $ad->video = $profileImage;
+            $ad->image = $profileImage;
             $ad->save();
 
             return redirect()->back()->with('alert', 'Data updated!');

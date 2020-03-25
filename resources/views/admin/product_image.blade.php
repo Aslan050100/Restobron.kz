@@ -35,7 +35,8 @@
                                 <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{ __('Id') }}</th>
-                                    <th scope="col">{{ __('Описания') }}</th>
+                                    <th scope="col">{{ __('Продукт') }}</th>
+                                    <th scope="col">{{ __('Фото') }}</th>
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
@@ -45,9 +46,8 @@
                                 @foreach ($product_images as $product_image)
                                     <tr>
                                         <td>{{ $product_image->id }}</td>
-                                        <td>
-                                            <a>{{ $product_image->description }}</a>
-                                        </td>
+                                        <td>{{ $product_image->products->name }}</td>
+                                        <td>{{ $product_image->image }}</td>
                                         <td>{{ $product_image->created_at}}</td>
                                         <td>{{ $product_image->updated_at}}</td>
                                         <td class="text-right">

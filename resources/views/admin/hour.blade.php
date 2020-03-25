@@ -34,8 +34,8 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Имя') }}</th>
-                                    <th scope="col">{{ __('Описания') }}</th>
+                                    <th scope="col">{{ __('Продукт') }}</th>
+                                    <th scope="col">{{ __('Время') }}</th>
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
@@ -44,9 +44,9 @@
                                 <tbody>
                                 @foreach ($hours as $hour)
                                     <tr>
-                                        <td>{{ $hour->name }}</td>
+                                        <td>{{ $hour->products->name }}</td>
                                         <td>
-                                            <a>{{ $hour->description }}</a>
+                                            <a>{{ $hour->monday }}</a>
                                         </td>
                                         <td>{{ $hour->created_at}}</td>
                                         <td>{{ $hour->updated_at}}</td>

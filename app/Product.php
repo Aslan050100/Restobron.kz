@@ -23,7 +23,7 @@ class Product extends Model
          return $this->belongsTo('App\City','city_id','id');
     }
     public function menus(){
-    	 return $this->hasMany('App\Menu','pro_id','id');
+    	 return $this->hasMany('App\Menu','id','pro_id');
     }
     public function product_images(){
     	 return $this->hasMany('App\Product_image','id','pro_id');
@@ -50,7 +50,7 @@ class Product extends Model
          return $this->hasMany('App\Reservation','pro_id','id');
     }
     public function hours(){
-         return $this->hasMany('App\Hour','pro_id','id');
+         return $this->hasMany('App\Hour','id','pro_id');
     }
 
 }
