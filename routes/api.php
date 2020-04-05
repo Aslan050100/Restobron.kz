@@ -30,3 +30,5 @@ Route::get('/getMenus','MenuController@getMenus')->middleware('cors');
 Route::match(['get','post'],'/register','RegistratorController@store')->middleware('cors');
 Route::match(['get','post'],'/login','MainUserController@store')->middleware('cors');
 Route::match(['get','post'],'/logout','MainUserController@destroy')->middleware('cors');
+Route::match(['get','post'],'/reservation','ReservationController@reserv')->middleware('cors');
+
