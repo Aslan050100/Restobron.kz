@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    //
     public function reserv(Request $req){
         $date = $req->date;
         $time = $req->time;
