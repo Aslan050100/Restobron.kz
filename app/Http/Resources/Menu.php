@@ -22,8 +22,7 @@ class Menu extends JsonResource
             'name'=>$this->name,
             'price'=>$this->price,
             'description'=>$this->description,
-            'product'=> MenuProductResource::collection($this->products),
-            'dish_type'=>DishTypeResource::collection($this->dish_types),
+            'dish_type'=>new DishTypeResource($this->dish_types),
         ];
     }
 }

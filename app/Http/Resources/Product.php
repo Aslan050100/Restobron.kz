@@ -16,6 +16,7 @@ use App\Http\Resources\Parking as ParkingResource;
 use App\Http\Resources\Pay as PayResource;
 use App\Http\Resources\Hashtag as HashtagResource;
 use App\Http\Resources\HallDescription as HallDescriptionResource;
+use App\Http\Resources\Menu as MenuResource;
 class Product extends JsonResource
 {
     /**
@@ -37,6 +38,7 @@ class Product extends JsonResource
             'video' =>$this->video,
             'rating' =>$this->rating,
             'map' =>$this->map,
+            'pro_menu'=>$this->pro_menu,
             'average_checks' => AverageCheckResource::collection($this->average_checks),
             'kitchens' => KitchenResource::collection($this->kitchens),
             'comforts' => ComfortResource::collection($this->comforts),
@@ -47,6 +49,7 @@ class Product extends JsonResource
             'product_images' => ProductImageResource::collection($this->product_images),
             'feedbacks'=>FeedbackResource::collection($this->feedbacks),
             'hall_description'=>new HallDescriptionResource($this->hall_description),
+            'menus' =>MenuResource::collection($this->menus),
         ];
     }
 }
