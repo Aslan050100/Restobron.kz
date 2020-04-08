@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use App\Http\Resources\AverageCheck as AverageCheckResource;
 use App\Http\Resources\Comfort as ComfortResource;
+use App\Http\Resources\Feedback as FeedbackResource;
 use App\Http\Resources\Kitchen as KitchenResource;
 use Illuminate\Http\Request;
 use App\Product;
@@ -38,6 +40,16 @@ class ProductController extends Controller
     public function getProductById($id){
     	$product = Product::find($id);
     	return new ProductResource($product);
+    }
+    public function addFeedback(Request $req,$pro_id,$user_id){
+        $comment = $req->comment;
+        $feedback = new Feedback;
+        $feedback->comment = $comment;
+        $feedback->pro_id = $pro_id;
+        $feedback->user_id = $user_id;
+        $feedback->save();
+        return 'Feedback inserted!';
+
     }
 
 }
