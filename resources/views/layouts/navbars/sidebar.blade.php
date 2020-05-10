@@ -164,6 +164,11 @@
                                     {{ __('Заказ меню') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pro_com') }}">
+                                    {{ __('Продукты и Удобство') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

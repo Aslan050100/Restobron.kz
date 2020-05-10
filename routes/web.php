@@ -134,5 +134,11 @@ Route::group(['middleware' => 'auth'], function () {
     //Menu_order
     Route::get('menu_order',['as'=>'menu_order','uses'=>'MenuOrderAdminController@index']);
     Route::match(['get','post'],'menu_orderDestroy/{id}',['as'=>'menu_order.destroy','uses'=>'MenuOrderAdminController@destroy']);
+    //Product and comfort
+    Route::get('pro_com',['as'=>'pro_com','uses'=>'ProductComfortController@index']);
+    Route::get('pro_comCreate',['as'=>'pro_com.create','uses'=>'ProductComfortController@create']);
+    Route::post('pro_comStore',['as'=>'pro_com.store','uses'=>'ProductComfortController@store']);
+    Route::match(['get','post'],'pro_comDestroy/{pro_id}/{comfort_id}',['as'=>'pro_com.destroy','uses'=>'ProductComfortController@destroy']);
+
 });
 
