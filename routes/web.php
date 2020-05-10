@@ -1,4 +1,4 @@
-<?php
+66666<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -134,5 +134,6 @@ Route::group(['middleware' => 'auth'], function () {
     //Menu_order
     Route::get('menu_order',['as'=>'menu_order','uses'=>'MenuOrderAdminController@index']);
     Route::match(['get','post'],'menu_orderDestroy/{id}',['as'=>'menu_order.destroy','uses'=>'MenuOrderAdminController@destroy']);
+    //Chart
+    Route::get('charts','SaleChartController@index');
 });
-

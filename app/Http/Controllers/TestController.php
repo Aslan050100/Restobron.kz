@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Ad;
 use App\Hall_description;
-	
+
 
 class TestController extends Controller
 {
@@ -17,4 +17,5 @@ class TestController extends Controller
     	$hall_descriptions = Hall_description::get();
     	dd($hall_descriptions[0]->products);
     }
+
 }
