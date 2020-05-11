@@ -65,7 +65,7 @@
     </div>
     <div class="navbar" id="navbar">
         <div class="logo top">
-            <a href="{{route('simple.index')}}">Restobron</a>
+            <a href="{{route('partner.index')}}">Restobron</a>
         </div>
         @if(!Auth::check())
             <div class="autorization">

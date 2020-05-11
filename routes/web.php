@@ -224,5 +224,19 @@ Route::match(['get','post'],'/logout',[
     'uses' => 'SignController@destroy',
     'as' => 'simple.logout'
 ]);
+Route::match(['get','post'],'/add_product',[
+    'uses' => 'PartnerController@add_product',
+    'as' => 'partner.add_product'
+]);
+
+Route::match(['get','post'],'/reservation/{pro_id}',[
+    'uses' => 'SimpleController@reservation',
+    'as' => 'simple.reservation'
+]);
+
+Route::match(['get','post'],'/reserv/{pro_id}',[
+    'uses' => 'SimpleController@reserv',
+    'as' => 'simple.reserv'
+]);
 
 

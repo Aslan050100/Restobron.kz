@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css') }}" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/partner_rest.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/reservation.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('assets/css/media.css" type="text/css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -54,122 +54,63 @@
 
 </head>
 
+
+
 <body>
 <header>
     <div class="background1">
-        <img src="{{asset('assets/images/asia_mama.jpg')}}">
+        <img src="{{asset('assets/images/'.$product->product_images[0]->image)}}">
     </div>
     <div class="background2">
 
     </div>
     <div class="navbar" id="navbar">
         <div class="logo top">
-            <a href="{{route('partner.index')}}">Restobron</a>
+            <a href="#">Restobron</a>
         </div>
-        @if(!Auth::check())
-            <div class="autorization">
-                <div class="sign_up">
-                    <a href="{{route('simple.signUp')}}">SIGN UP</a>
-                </div>
-                <div class="login">
-                    <a href="{{route('simple.signIn')}}">LOGIN</a>
-                </div>
-            </div>
-        @endif
-        @if(Auth::check())
-            <div class="autorization">
-                <div class="sign_up" >
-                    <a href="#">{{Auth::user()->name}}</a>
-                    <div class="dropdown-content">
-                        <a href="{{route('simple.logout')}}">Logout</a>
-                    </div>
-                </div>
-            </div>
-        @endif
     </div>
-
     <div class="onlinebooking">
         <h1>
-            + <span>Restaurant</span>
+            {{$product->name}}
         </h1>
+        <p>  {{$product->address}}</p>
     </div>
 
 </header>
 
 <div class="container main">
     <div class="middle_section">
-        <div class="leftside">
-            <form>
-                <p>Price</p>
-                <div class="tokens">
-                    <img src="{{asset('assets/images/seclipse.png')}}">
-                    Above 25000
-                </div>
-            </form>
-            <form>
-                <p>
-                    CUISINE
-                </p>
-                <div class="tokens">
-                    <img src="{{asset('assets/images/seclipse.png')}}">
-                    Asian
-                </div>
-                <div class="tokens">
-                    <img src="{{asset('assets/images/seclipse.png')}}">
-                    Mexican
-                </div>
-            </form>
-            <form>
-                <p>
-                    Restaurant features
-                </p>
-                <div class="tokens">
-                    <img src="{{asset('assets/images/seclipse.png')}}">
-                    Smoking allowed
-                </div>
-
-            </form>
-
-        </div>
-        <div class="rightside">
-            <div class="minicontainer">
-
-                <h1>ABOUT RESTAURANT</h1>
-                <form class="book_yo" action="{{route('partner.add_product')}}" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-
-                    <h4>Restaurant Name</h4>
-                    <textarea style="width: 100%" placeholder="Azia Mama" name="name"></textarea>
-
-
-                    <h4>Short Description</h4>
-                <textarea style="width: 100%" placeholder="Azia Mama, located in the center of Almaty..." name="description"></textarea>
-                    <h4>Phone Number</h4>
-                    <textarea style="width: 100%" placeholder="+77089429592" name="number"></textarea>
-
-                <h4>Location</h4>
-                <div class="address">
-                    <textarea style="width: 100%" name="address" placeholder="Dostyk, 32"></textarea>
-                </div>
-                <h4>Map</h4>
-                <div class="address">
-                    <textarea style="width: 100%" name="map" placeholder="ifame"></textarea>
-                </div>
-
-                <div style="position:relative;overflow:hidden;"><a href="https://yandex.kz/maps/org/1085403697/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Mamma mia & Ciao Pizza</a><a href="https://yandex.kz/maps/162/almaty/category/restaurant/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ресторан в Алматы</a><a href="https://yandex.kz/maps/162/almaty/category/food_delivery_service/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Доставка еды и обедов в Алматы</a><iframe src="https://yandex.kz/map-widget/v1/-/CSsVJS5q" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-
-
-                    <input type="submit" name="" value="SAVE CHANGES">
-                </form>
-
-
+        <form class="book_yo" method="post" action="{{route('simple.reserv',[$product->id])}}">
+            {{ csrf_field() }}
+        <div class="datepickers">
+            <div class="date first">
+                <h3>Date</h3>
+                <input id="datepicker" name="date" width="276" />
+                <script>
+                    $('#datepicker').datepicker();
+                </script>
 
             </div>
-
+            <div class="date second">
+                <h3>TIME</h3>
+                <input id="timepicker" name="time" width="276" />
+                <script>
+                    $('#timepicker').timepicker();
+                </script>
+            </div>
+            <div class="people">
+                <h3>PEOPLE</h3>
+                <input type="number" name="adult" width="276" />
+            </div>
         </div>
+
+            <input type="submit" class="qwe" value="BOOK YOUR TABLE">
+        </form>
     </div>
 
 </div>
+
+
 
 <footer>
     <div class="container">
@@ -200,19 +141,19 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="{{ asset('assets/images/phone.jpg')}}">
+                    <img src="images/phone.jpg">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="{{ asset('assets/images/facebook.jpg')}}">
+                        <img src="images/facebook.jpg">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/instagram.jpg')}}">
+                        <img src="images/instagram.jpg">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/vk.jpg')}}">
+                        <img src="images/vk.jpg">
                     </div>
                 </div>
             </div>

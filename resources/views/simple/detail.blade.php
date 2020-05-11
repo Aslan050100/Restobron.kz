@@ -136,8 +136,8 @@
         <div class="rightside">
             <div class="minicontainer">
 
-                <form class="book_yo">
-                    <input type="button" name="" value="BOOK YOUR TABLE">
+                <form class="book_yo" method="get" action="{{route('simple.reservation',[$product->id])}}">
+                    <input type="submit" name="" value="BOOK YOUR TABLE">
                 </form>
 
                 <h4>About Restaurant</h4>
@@ -151,8 +151,9 @@
                     <img src="{{asset('assets/images/mapdot.jpg')}}">
                     {{$product->address}}
                 </div>
-
-                <div style="position:relative;overflow:hidden;"><a href="https://yandex.kz/maps/org/1085403697/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Mamma mia & Ciao Pizza</a><a href="https://yandex.kz/maps/162/almaty/category/restaurant/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ресторан в Алматы</a><a href="https://yandex.kz/maps/162/almaty/category/food_delivery_service/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Доставка еды и обедов в Алматы</a><iframe src="https://yandex.kz/map-widget/v1/-/CSsVJS5q" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                <div style="position:relative;overflow:hidden;">
+                    <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/org/sapori_veri/95011799434/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Sapori Veri</a><a href="https://yandex.by/maps/162/almaty/category/restaurant/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ресторан в Алматы</a><a href="https://yandex.by/maps/162/almaty/category/cafe/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Кафе в Алматы</a><iframe src="https://yandex.by/map-widget/v1/-/C8CWaPIl" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
                 <h4>Gallery</h4>
                 <div class="Gallery">
                     <div class="row">
