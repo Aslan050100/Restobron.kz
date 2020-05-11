@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 //Route::get('/testORM','TestController@test');
 
 Auth::routes();
@@ -173,4 +171,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get','post'],'pro_payDestroy/{pro_id}/{pay_id}',['as'=>'pro_pay.destroy','uses'=>'ProductPayController@destroy']);
     //
 });
+
+Route::match(['get','post'],'/',[
+    'uses' => 'SimpleController@index',
+    'as' => 'simple.index'
+]);
+
+Route::match(['get','post'],'/filter_page',[
+    'uses' => 'SimpleController@filter_page',
+    'as' => 'simple.filter_page'
+]);
+
+Route::match(['get','post'],'/detail/{id}',[
+    'uses' => 'SimpleController@detail',
+    'as' => 'simple.detail'
+]);
 
