@@ -1,0 +1,274 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "GothamProRegular"; 
+  src: url("../fonts/GothamProRegular.eot");
+  src: url("../fonts/GothamProRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/GothamProRegular.woff") format("woff"),
+  url("../fonts/GothamProRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProBold";
+	src: url("../fonts/GothamProBold.eot");
+	src: url("../fonts/GothamProBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/GothamProBold.woff") format("woff"),
+	url("../fonts/GothamProBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProMedium";
+	src: url("../fonts/GothamProMedium.eot");
+	src: url("../fonts/GothamProMedium.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/GothamProMedium.woff") format("woff"),
+	url("../fonts/GothamProMedium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProLight";
+	src: url("../fonts/GothamProLight.eot");
+	src: url("../fonts/GothamProLight.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/GothamProLight.woff") format("woff"),
+	url("../fonts/GothamProLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+  font-family: "GothamProLight";
+  src: url("../fonts/GothamProLight.eot");
+  src: url("../fonts/GothamProLight.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/GothamProLight.woff") format("woff"),
+  url("../fonts/GothamProLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "GothamProRegular";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+.centering {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centering h2 {
+  font-size: 24px;
+  margin-top: 15px;
+  color: rgba(0, 0, 0, 0.63);
+}
+
+.centering p {
+  color: rgba(0, 0, 0, 0.63);
+  font-size: 18px;
+}
+
+.centering form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+.centering form input {
+  width: 100%;
+  margin-bottom: 26px;
+  border: 1px solid rgba(202, 74, 46, 0.17);
+  padding: 14px;
+  border-radius: 8px;
+  outline: none;
+}
+
+body {
+  background: url("../images/sign_back.jpg");
+  background-size: cover;
+}
+
+.sign_in {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.centering {
+  padding: 50px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+}
+label.container1 {
+    width: 50%;
+}
+p.bottom_paragraph {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 22px;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0!important;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 11px;
+  border: 1px solid rgba(202, 74, 46, 0.63);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+span.checkmark {
+    border: 1px solid rgba(202, 74, 46, 0.72);
+    border-radius: 3px;
+}
+
+button.cancelbtn {
+    background: #CA4A2E;
+    border-radius: 8px;
+    width: 100%;
+    color: #fff;
+    padding: 11px;
+    font-size: 18px;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+label.container1 {
+    color: rgba(0, 0, 0, 0.62);
+}
+
+button.cancelbtn:hover {
+    background: #c13c1e;
+}
+
+a{
+  color: #CA4A2E;
+}
+a:hover{
+  color: #CA4A2E;
+}
+
+@keyframes pulse {0% {transform: scale(0.9);opacity: 1;}
+50% {transform: scale(1); opacity: 1; }
+100% {transform: scale(0.9);opacity: 1;}}
+@-webkit-keyframes pulse {0% {-webkit-transform: scale(0.95);opacity: 1;}
+50% {-webkit-transform: scale(1);opacity: 1;}
+100% {-webkit-transform: scale(0.95);opacity: 1;}}
+@keyframes tossing {
+  0% {transform: rotate(-8deg);}
+  50% {transform: rotate(8deg);}
+  100% {transform: rotate(-8deg);}}
+  @-webkit-keyframes tossing {
+    0% {-webkit-transform: rotate(-8deg);}
+    50% {-webkit-transform: rotate(8deg);}
+    100% {-webkit-transform: rotate(-8deg);}}
+    @-moz-keyframes circle-anim {
+      0% {-moz-transform: rotate(0deg) scale(0.5) skew(1deg);opacity: .1;-moz-opacity: .1;-webkit-opacity: .1;-o-opacity: .1;}
+      30% {-moz-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .5;-moz-opacity: .5;-webkit-opacity: .5;-o-opacity: .5;}
+      100% {-moz-transform: rotate(0deg) scale(1) skew(1deg);opacity: .6;-moz-opacity: .6;-webkit-opacity: .6;-o-opacity: .1;}}
+      @-webkit-keyframes circle-anim {
+        0% {-webkit-transform: rotate(0deg) scale(0.5) skew(1deg);-webkit-opacity: .1;}
+        30% {-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);-webkit-opacity: .5;}
+        100% {-webkit-transform: rotate(0deg) scale(1) skew(1deg);-webkit-opacity: .1;}}
+        @-o-keyframes circle-anim {
+          0% {-o-transform: rotate(0deg) kscale(0.5) skew(1deg);-o-opacity: .1;}
+          30% {-o-transform: rotate(0deg) scale(0.7) skew(1deg);-o-opacity: .5;}
+          100% {-o-transform: rotate(0deg) scale(1) skew(1deg);-o-opacity: .1;}}
+          @keyframes circle-anim {
+            0% {transform: rotate(0deg) scale(0.5) skew(1deg);opacity: .1;}
+            30% {transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .5;}
+            100% {transform: rotate(0deg) scale(1) skew(1deg);
+              opacity: .1;}}
+              @-moz-keyframes circle-fill-anim {
+                0% {-moz-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}
+                50% {-moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);opacity: .2;}
+                100% {-moz-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}}
+                @-webkit-keyframes circle-fill-anim {
+                  0% {-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;  }
+                  50% {-webkit-transform: rotate(0deg) scale(1) skew(1deg);opacity: .2;  }
+                  100% {-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}}
+                  @-o-keyframes circle-fill-anim {
+                    0% {-o-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}
+                    50% {-o-transform: rotate(0deg) scale(1) skew(1deg);opacity: .2;}
+                    100% {-o-transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}}
+                    @keyframes circle-fill-anim {
+                      0% {transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}
+                      50% {transform: rotate(0deg) scale(1) skew(1deg);opacity: .2;}
+                      100% {transform: rotate(0deg) scale(0.7) skew(1deg);opacity: .2;}}
+                      /*--------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+

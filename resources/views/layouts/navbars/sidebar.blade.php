@@ -81,7 +81,7 @@
 {{--                            </li>--}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product') }}">
-                                    {{ __('Продукты') }}
+                                    {{ __('Рестораны') }}
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -166,32 +166,32 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_com') }}">
-                                    {{ __('Продукты и Удобства') }}
+                                    {{ __('Рестораны и Удобства') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_ave') }}">
-                                    {{ __('Продукты и Средние чеки') }}
+                                    {{ __('Рестораны и Средние чеки') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_hash') }}">
-                                    {{ __('Продукты и Хэштеги') }}
+                                    {{ __('Рестораны и Хэштеги') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_kit') }}">
-                                    {{ __('Продукты и Кухни') }}
+                                    {{ __('Рестораны и Кухни') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_parking') }}">
-                                    {{ __('Продукты и Парковки') }}
+                                    {{ __('Рестораны и Парковки') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_pay') }}">
-                                    {{ __('Продукты и Оплаты') }}
+                                    {{ __('Рестораны и Оплаты') }}
                                 </a>
                             </li>
                         </ul>

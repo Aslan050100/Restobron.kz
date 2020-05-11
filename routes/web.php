@@ -187,3 +187,42 @@ Route::match(['get','post'],'/detail/{id}',[
     'as' => 'simple.detail'
 ]);
 
+Route::match(['get','post'],'/addfeedback/{pro_id}/{user_id}',[
+    'uses' => 'SimpleController@feedback',
+    'as' => 'simple.feedback'
+]);
+
+
+Route::match(['get','post'],'/partner',[
+    'uses' => 'PartnerController@index',
+    'as' => 'partner.index'
+]);
+
+Route::match(['get','post'],'/partnership',[
+    'uses' => 'PartnerController@partnership',
+    'as' => 'partner.partnership'
+]);
+
+
+Route::match(['get','post'],'/signUp',[
+    'uses' => 'SignController@signUp',
+    'as' => 'simple.signUp'
+]);
+Route::match(['post'],'/store',[
+    'uses' => 'SignController@store',
+    'as' => 'simple.store'
+]);
+Route::match(['get','post'],'/signIn',[
+    'uses' => 'SignController@signIn',
+    'as' => 'simple.signIn'
+]);
+Route::match(['post'],'/login',[
+    'uses' => 'SignController@login',
+    'as' => 'simple.login'
+]);
+Route::match(['get','post'],'/logout',[
+    'uses' => 'SignController@destroy',
+    'as' => 'simple.logout'
+]);
+
+

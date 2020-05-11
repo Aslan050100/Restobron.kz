@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css') }}" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/filter_price.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/partner_rest.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('assets/css/media.css" type="text/css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -54,12 +54,17 @@
 
 </head>
 
-
 <body>
 <header>
+    <div class="background1">
+        <img src="{{asset('assets/images/asia_mama.jpg')}}">
+    </div>
+    <div class="background2">
+
+    </div>
     <div class="navbar" id="navbar">
         <div class="logo top">
-            <a href="{{route('simple.index')}}">Restobron</a>
+            <a href="#">Restobron</a>
         </div>
         @if(!Auth::check())
             <div class="autorization">
@@ -83,75 +88,76 @@
         @endif
     </div>
 
+    <div class="onlinebooking">
+        <h1>
+            + <span>Add Image</span>
+        </h1>
+    </div>
 
 </header>
 
 <div class="container main">
     <div class="middle_section">
         <div class="leftside">
-            <form action="/action_page.php">
-                <p>PRICE</p>
-                @foreach($prices as $price)
-                <label class="container_check">{{$price->price}} tg
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                    @endforeach
-
+            <form>
+                <p>Price</p>
+                <div class="tokens">
+                    <img src="{{asset('assets/images/seclipse.png')}}">
+                    Above 25000
+                </div>
             </form>
-
-            <form action="/action_page.php">
-                <p>CUSINE</p>
-                @foreach($kitchens as $kitchen)
-                <label class="container_check">{{$kitchen->name}}
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                    @endforeach
-
+            <form>
+                <p>
+                    CUISINE
+                </p>
+                <div class="tokens">
+                    <img src="{{asset('assets/images/seclipse.png')}}">
+                    Asian
+                </div>
+                <div class="tokens">
+                    <img src="{{asset('assets/images/seclipse.png')}}">
+                    Mexican
+                </div>
             </form>
-
-            <form action="/action_page.php">
-                <p>FEATURES</p>
-                @foreach($comforts as $comfort)
-                <label class="container_check">{{$comfort->name}}
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                    @endforeach
-
-
+            <form>
+                <p>
+                    Restaurant features
+                </p>
+                <div class="tokens">
+                    <img src="{{asset('assets/images/seclipse.png')}}">
+                    Smoking allowed
+                </div>
 
             </form>
 
         </div>
         <div class="rightside">
-            @foreach($products as $product)
-            <div class="object">
+            <div class="minicontainer">
 
-                <div class="background_image">
-                    <img src="{{ asset('assets/images/asia_mama.jpg')}}">
-{{--                    <img src="assets/images/{{$product->product_images->image}}">--}}
+                <h1>ABOUT RESTAURANT</h1>
+
+                <h4>Short Description</h4>
+                <textarea style="width: 100%" placeholder="Azia Mama, located in the center of Almaty..."></textarea>
+
+                <h4>Location</h4>
+                <div class="address">
+                    <textarea style="width: 100%" placeholder="Dostyk, 32"></textarea>
                 </div>
-                <div class="desc">
-                    <div class="restaurant_name">
-                        {{$product->name}}
-                    </div>
-                    <p class="address">{{$product->address}}</p>
-                    <form method="get" action="{{ route('simple.detail',[$product->id]) }}">
-                        <input class="book_now" type="submit" name="" value="Book now">
-                    </form>
-                </div>
+
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.kz/maps/org/1085403697/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Mamma mia & Ciao Pizza</a><a href="https://yandex.kz/maps/162/almaty/category/restaurant/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ресторан в Алматы</a><a href="https://yandex.kz/maps/162/almaty/category/food_delivery_service/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Доставка еды и обедов в Алматы</a><iframe src="https://yandex.kz/map-widget/v1/-/CSsVJS5q" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+
+                <form class="book_yo">
+                    <input type="button" name="" value="SAVE CHANGES">
+                </form>
+
+
+
             </div>
-            @endforeach
+
         </div>
     </div>
-{{$products->links()}}
+
 </div>
-
-
-
-
 
 <footer>
     <div class="container">
@@ -202,9 +208,6 @@
     </div>
 
 </footer>
-
-
-
 
 
 </body>

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css') }}" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/personal.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/partner.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('assets/css/media.css" type="text/css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@
 <body>
 <header>
     <div class="background1">
-        <img src="{{ asset('assets/images/back1.jpg')}}">
+        <img src="{{asset('assets/images/back1.jpg')}}">
     </div>
     <div class="background2">
 
@@ -87,24 +87,16 @@
                 </div>
             </div>
         @endif
-
     </div>
     <div class="onlinebooking">
         <h1>
-            BOOK YOUR TABLE ONLINE
+            Online Reservation System for Modern Restaurants
         </h1>
-        <p>Discover amazing dining experiences in your city and book in seconds</p>
-        <form method="post" class="form_class" action="{{ route('simple.filter_page') }}" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <div class="custom-select1">
-                <select id="cities" name="city">
-                    <option value="Almaty">Almaty</option>
-{{--                    <option value="Nur-Sultan">Nur-Sultan</option>--}}
-{{--                    <option value="Aqtau">Aqtau</option>--}}
-{{--                    <option value="Aqtobe">Aqtobe</option>--}}
-                </select>
-            </div>
-            <input class="find_a_rest" type="submit" name="" value="FIND A RESTAURANT">
+        <p>Get more customers
+            and optimize daily operations
+        </p>
+        <form method="get" action="{{route('partner.partnership')}}">
+            <input class="find_a_rest" type="submit" name="" value="TO PARTNERSHIP">
         </form>
     </div>
 
@@ -115,35 +107,33 @@
 <div class="section2">
     <div class="container">
         <div class="upper_bound">
-            <h2>Fine-dining at
-                your finger tips</h2>
-            <p>We've partnered with the very best eateries in town to give you a carefully curated list of the local fine-dining scene. We genuinely love these places, and we're sure you will too!</p>
+            <h2>2000 Restaurants in our country rely on our restaurant reservation system</h2>
         </div>
 
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('assets/images/logos.jpg')}}">
+                <img src="{{asset('assets/images/logos.jpg')}}">
             </div>
         </div>
     </div>
@@ -151,69 +141,72 @@
 </div>
 
 <div class="section3">
-    <div class="background1">
-        <img src="{{ asset('assets/images/back2.jpg')}}">
-    </div>
-    <div class="background2 second">
+    <div class="container">
 
-    </div>
-    <div class="wish_a_table">
-        <h1>WISH A LAID TABLE?</h1>
-        <p>Make an order right now, everything will be ready for your arrival</p>
+        <h2>Features for Reservation</h2>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/kalendar.jpg')}}">
+                </div>
+                <p>Online Reservations</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/analitycs.jpg')}}">
+                </div>
+                <p>Useful Analitycs
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/database.jpg')}}">
+                </div>
+                <p>Customer Database</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/kalendar.jpg')}}">
+                </div>
+                <p>Online Ordering</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/analitycs.jpg')}}">
+                </div>
+                <p>Server Monitoring</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="order_image">
+                    <img src="{{asset('assets/images/database.jpg')}}">
+                </div>
+                <p>Free Support</p>
+            </div>
+        </div>
     </div>
 
 </div>
 
-<div class="section4">
+
+
+<div class="section5">
     <div class="container">
-
-
-        <div class="heading">
-
-            <h1>
-                See what our users <br>
-                have to say</h1>
-            <p> We think we're awesome, but don't just take our word for it! See<br> what our users have to say about restobron </p>
-
-        </div>
-        <div class="feedbacks">
-            <div class="one_of_three">
-                <div class="quote">
-                    <img src="{{ asset('assets/images/quote.jpg')}}">
-                </div>
-                <p>
-                    ”Love how I can find the address, directions, menu and get a description - perfect for Dubai with all its restaurants!”
-                </p>
-                <div class="social_link">
-                    <a href="">@Kabidollayeva</a>
-                </div>
+        <div class="double">
+            <div class="leftside">
+                <img src="{{asset('assets/images/chel.jpg')}}">
             </div>
-            <div class="one_of_three">
-                <div class="quote">
-                    <img src="{{ asset('assets/images/quote.jpg')}}">
+            <div class="rightside">
+                <div class="upscription">
+                    We were looking for a straight forward system for managing the restaurant. Eat App helped us implement a system that increased table turns by 15%.
                 </div>
-                <p>
-                    ”Love how I can find the address, directions, menu and get a description - perfect for Dubai with all its restaurants!”
-                </p>
-                <div class="social_link">
-                    <a href="">@Aslan050100</a>
+                <div class="whois">
+                    <p class="fullname">John Buenaventura<br><span>Culinary Director, Cuisinero Uno</span>
+                    </p>
                 </div>
-            </div>
-            <div class="one_of_three last">
-                <div class="quote">
-                    <img src="{{ asset('assets/images/quote.jpg')}}">
-                </div>
-                <p>
-                    ”Love how I can find the address, directions, menu and get a description - perfect for Dubai with all its restaurants!”
-                </p>
-                <div class="social_link">
-                    <a href="">@Aknur</a>
-                </div>
-
             </div>
         </div>
-
     </div>
+
 </div>
 
 <footer>
@@ -265,6 +258,7 @@
     </div>
 
 </footer>
+
 
 
 <script>

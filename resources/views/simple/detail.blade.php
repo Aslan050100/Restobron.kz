@@ -58,7 +58,7 @@
 <body>
 <header>
     <div class="background1">
-        <img src="{{asset('assets/images/$product->product_images[0]->image')}}">
+        <img src="{{asset('assets/images/'.$product->product_images[0]->image)}}">
     </div>
     <div class="background2">
 
@@ -67,6 +67,26 @@
         <div class="logo top">
             <a href="{{route('simple.index')}}">Restobron</a>
         </div>
+        @if(!Auth::check())
+            <div class="autorization">
+                <div class="sign_up">
+                    <a href="{{route('simple.signUp')}}">SIGN UP</a>
+                </div>
+                <div class="login">
+                    <a href="{{route('simple.signIn')}}">LOGIN</a>
+                </div>
+            </div>
+        @endif
+        @if(Auth::check())
+            <div class="autorization">
+                <div class="sign_up" >
+                    <a href="#">{{Auth::user()->name}}</a>
+                    <div class="dropdown-content">
+                        <a href="{{route('simple.logout')}}">Logout</a>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="onlinebooking">
         <h1>
@@ -128,7 +148,7 @@
 
                 <h4>Location</h4>
                 <div class="address">
-                    <img src="images/mapdot.jpg">
+                    <img src="{{asset('assets/images/mapdot.jpg')}}">
                     {{$product->address}}
                 </div>
 
@@ -138,7 +158,7 @@
                     <div class="row">
                         <div class="column">
                             @foreach($product->product_images as $image)
-                            <img src="{{asset('assets/images/$image->image')}}" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                            <img src="{{asset('assets/images/' . $image->image)}}" alt="Nature" style="width:100%" onclick="myFunction(this);">
                             @endforeach
                         </div>
 
@@ -171,8 +191,10 @@
 
 
                 <div class="feedbacks">
-                    <form class="feed_input">
-                        <input type="button" name="" value="Leave Feedback">
+                    <form class="feed_input" method="post" action="{{ route('simple.feedback',[$product->id,Auth::user()->id])}}">
+                        {{ csrf_field() }}
+                        <textarea rows="4" cols="70" name="comment"></textarea>
+                        <input type="submit" name="" value="Leave Feedback">
                     </form>
                     @foreach($product->feedbacks as $feedback)
                     <div class="feedback first">

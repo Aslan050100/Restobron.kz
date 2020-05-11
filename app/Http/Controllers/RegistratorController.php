@@ -23,4 +23,5 @@ class RegistratorController extends Controller
         return "Register";
     }
 
+
 }
