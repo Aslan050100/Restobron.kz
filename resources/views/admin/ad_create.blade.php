@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Продукт') }}</label>
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Объявление') }}</label>
                                     <select name='product' class="browser-default custom-select">
                                         <option selected>Откройте это меню выбора</option>
                                         @foreach($products as $product)

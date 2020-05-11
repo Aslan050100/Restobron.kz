@@ -21,7 +21,7 @@
                         <form method="post" action="{{ route('average_check.store') }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('Информация о среднем чеком') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Информация о среднем чеке') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-name">{{ __('Цена') }}</label>

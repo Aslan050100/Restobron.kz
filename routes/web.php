@@ -134,5 +134,43 @@ Route::group(['middleware' => 'auth'], function () {
     //Menu_order
     Route::get('menu_order',['as'=>'menu_order','uses'=>'MenuOrderAdminController@index']);
     Route::match(['get','post'],'menu_orderDestroy/{id}',['as'=>'menu_order.destroy','uses'=>'MenuOrderAdminController@destroy']);
+    //Chart
+    Route::get('charts','SaleChartController@index');
+    //Product and comfort
+    Route::get('pro_com',['as'=>'pro_com','uses'=>'ProductComfortController@index']);
+    Route::get('pro_comCreate',['as'=>'pro_com.create','uses'=>'ProductComfortController@create']);
+    Route::post('pro_comStore',['as'=>'pro_com.store','uses'=>'ProductComfortController@store']);
+    Route::match(['get','post'],'pro_comDestroy/{pro_id}/{comfort_id}',['as'=>'pro_com.destroy','uses'=>'ProductComfortController@destroy']);
+    //
+    //Product and average check
+    Route::get('pro_ave',['as'=>'pro_ave','uses'=>'ProductAverageCheckController@index']);
+    Route::get('pro_aveCreate',['as'=>'pro_ave.create','uses'=>'ProductAverageCheckController@create']);
+    Route::post('pro_aveStore',['as'=>'pro_ave.store','uses'=>'ProductAverageCheckController@store']);
+    Route::match(['get','post'],'pro_aveDestroy/{pro_id}/{average_id}',['as'=>'pro_ave.destroy','uses'=>'ProductAverageCheckController@destroy']);
+    //
+    //Product and hashtag
+    Route::get('pro_hash',['as'=>'pro_hash','uses'=>'ProductHashtagController@index']);
+    Route::get('pro_hashCreate',['as'=>'pro_hash.create','uses'=>'ProductHashtagController@create']);
+    Route::post('pro_hashStore',['as'=>'pro_hash.store','uses'=>'ProductHashtagController@store']);
+    Route::match(['get','post'],'pro_hashDestroy/{pro_id}/{hashtag_id}',['as'=>'pro_hash.destroy','uses'=>'ProductHashtagController@destroy']);
+    //
+    //Product and kitchen
+    Route::get('pro_kit',['as'=>'pro_kit','uses'=>'ProductKitchenController@index']);
+    Route::get('pro_kitCreate',['as'=>'pro_kit.create','uses'=>'ProductKitchenController@create']);
+    Route::post('pro_kitStore',['as'=>'pro_kit.store','uses'=>'ProductKitchenController@store']);
+    Route::match(['get','post'],'pro_kitDestroy/{pro_id}/{kitchen_id}',['as'=>'pro_kit.destroy','uses'=>'ProductKitchenController@destroy']);
+    //
+    //Product and parking
+    Route::get('pro_parking',['as'=>'pro_parking','uses'=>'ProductParkingController@index']);
+    Route::get('pro_parkingCreate',['as'=>'pro_parking.create','uses'=>'ProductParkingController@create']);
+    Route::post('pro_parkingStore',['as'=>'pro_parking.store','uses'=>'ProductParkingController@store']);
+    Route::match(['get','post'],'pro_parkingDestroy/{pro_id}/{parking_id}',['as'=>'pro_parking.destroy','uses'=>'ProductParkingController@destroy']);
+    //
+    //Product and pay
+    Route::get('pro_pay',['as'=>'pro_pay','uses'=>'ProductPayController@index']);
+    Route::get('pro_payCreate',['as'=>'pro_pay.create','uses'=>'ProductPayController@create']);
+    Route::post('pro_payStore',['as'=>'pro_pay.store','uses'=>'ProductPayController@store']);
+    Route::match(['get','post'],'pro_payDestroy/{pro_id}/{pay_id}',['as'=>'pro_pay.destroy','uses'=>'ProductPayController@destroy']);
+    //
 });
 
