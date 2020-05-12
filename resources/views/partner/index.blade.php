@@ -51,7 +51,9 @@
 
 
 
+<style>
 
+</style>
 </head>
 
 
@@ -238,16 +240,16 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="{{ asset('assets/images/phone.jpg')}}">
+                    <img src="{{ asset('assets/images/phone.png')}}">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="{{ asset('assets/images/facebook.jpg')}}">
+                        <img src="{{ asset('assets/images/facebook.png')}}">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/instagram.jpg')}}">
+                        <img src="{{ asset('assets/images/instagram.png')}}">
                     </div>
                     <div>
                         <img src="{{ asset('assets/images/vk.jpg')}}">

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "GothamProRegular"; 
+  font-family: "GothamProRegular";
   src: url("../fonts/GothamProRegular.eot");
   src: url("../fonts/GothamProRegular.eot?#iefix")format("embedded-opentype"),
   url("../fonts/GothamProRegular.woff") format("woff"),
@@ -57,7 +57,16 @@ body {
   min-height: 100vh;
 }
 
-
+.logo{
+    font-family: 'Parisienne', cursive;
+}
+.logo {
+    font-size: 40px;
+    color: #fff;
+}
+.logo:hover{
+    text-decoration: none!important;
+}
 
 .centering {
   display: flex;
@@ -103,7 +112,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+}
 .centering {
   padding: 50px;
   background: #fff;
@@ -209,7 +218,8 @@ a{
   color: #CA4A2E;
 }
 a:hover{
-  color: #CA4A2E;
+    text-decoration: none;
+    color: #CA4A2E;
 }
 
 @keyframes pulse {0% {transform: scale(0.9);opacity: 1;}

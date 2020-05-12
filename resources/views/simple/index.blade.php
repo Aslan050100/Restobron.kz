@@ -90,18 +90,25 @@
 
     </div>
     <div class="onlinebooking">
+        @if (Session::has('success'))
+            <div class="alert alert-info">{{ Session::get('success') }}</div>
+        @endif
         <h1>
             BOOK YOUR TABLE ONLINE
         </h1>
         <p>Discover amazing dining experiences in your city and book in seconds</p>
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
+
         <form method="post" class="form_class" action="{{ route('simple.filter_page') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="custom-select1">
                 <select id="cities" name="city">
+                    <option value="Nur-Sultan">Nur-Sultan</option>
                     <option value="Almaty">Almaty</option>
-{{--                    <option value="Nur-Sultan">Nur-Sultan</option>--}}
-{{--                    <option value="Aqtau">Aqtau</option>--}}
-{{--                    <option value="Aqtobe">Aqtobe</option>--}}
+                    <option value="Aqtau">Aqtau</option>
+                    <option value="Aqtobe">Aqtobe</option>
                 </select>
             </div>
             <input class="find_a_rest" type="submit" name="" value="FIND A RESTAURANT">
@@ -245,16 +252,16 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="{{ asset('assets/images/phone.jpg')}}">
+                    <img src="{{ asset('assets/images/phone.png')}}">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="{{ asset('assets/images/facebook.jpg')}}">
+                        <img src="{{ asset('assets/images/facebook.png')}}">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/instagram.jpg')}}">
+                        <img src="{{ asset('assets/images/instagram.png')}}">
                     </div>
                     <div>
                         <img src="{{ asset('assets/images/vk.jpg')}}">

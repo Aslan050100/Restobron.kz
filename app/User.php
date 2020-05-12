@@ -40,6 +40,9 @@ class User extends Authenticatable
     public function feedbacks(){
          return $this->hasMany('App\Feedback','id','user_id');
     }
+    public function reservations(){
+        return $this->hasMany('App\Reservation','id','user_id');
+    }
 
     public function setPasswordAttribute($password)
     {

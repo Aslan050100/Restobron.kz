@@ -49,7 +49,11 @@
     <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
-
+    <style>
+        .container.main {
+            box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    </style>
 
 
 </head>
@@ -136,9 +140,15 @@
         <div class="rightside">
             <div class="minicontainer">
 
-                <form class="book_yo" method="get" action="{{route('simple.reservation',[$product->id])}}">
-                    <input type="submit" name="" value="BOOK YOUR TABLE">
-                </form>
+                @if(Auth::user() != null)
+                    <form class="book_yo" method="get" action="{{route('simple.reservation',[$product->id])}}">
+                        <input type="submit" name="" value="BOOK YOUR TABLE">
+                    </form>
+                @else
+                    <form class="book_yo">
+                        <input type="button" name="" value="Firstly, please login">
+                    </form>
+                    @endif
 
                 <h4>About Restaurant</h4>
                 <p class="description">
@@ -185,18 +195,25 @@
 
 
                 </div>
-
-                <form class="book_yo">
-                    <input type="button" name="" value="BOOK YOUR TABLE">
-                </form>
+                    @if(Auth::user() != null)
+                        <form class="book_yo" method="get" action="{{route('simple.reservation',[$product->id])}}">
+                            <input type="submit" name="" value="BOOK YOUR TABLE">
+                        </form>
+                    @else
+                        <form class="book_yo">
+                            <input type="button" name="" value="Firstly, please login">
+                        </form>
+                    @endif
 
 
                 <div class="feedbacks">
+                    @if(Auth::user() != null)
                     <form class="feed_input" method="post" action="{{ route('simple.feedback',[$product->id,Auth::user()->id])}}">
                         {{ csrf_field() }}
                         <textarea rows="4" cols="70" name="comment"></textarea>
                         <input type="submit" name="" value="Leave Feedback">
                     </form>
+                    @endif
                     @foreach($product->feedbacks as $feedback)
                     <div class="feedback first">
                         <div class="quote">
@@ -247,16 +264,16 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="{{ asset('assets/images/phone.jpg')}}">
+                    <img src="{{ asset('assets/images/phone.png')}}">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="{{ asset('assets/images/facebook.jpg')}}">
+                        <img src="{{ asset('assets/images/facebook.png')}}">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/instagram.jpg')}}">
+                        <img src="{{ asset('assets/images/instagram.png')}}">
                     </div>
                     <div>
                         <img src="{{ asset('assets/images/vk.jpg')}}">

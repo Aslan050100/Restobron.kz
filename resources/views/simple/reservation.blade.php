@@ -49,7 +49,13 @@
     <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
-
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .container.main {
+            box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    </style>
 
 
 </head>
@@ -66,8 +72,28 @@
     </div>
     <div class="navbar" id="navbar">
         <div class="logo top">
-            <a href="#">Restobron</a>
+            <a href="{{route('simple.index')}}">Restobron</a>
         </div>
+        @if(!Auth::check())
+            <div class="autorization">
+                <div class="sign_up">
+                    <a href="{{route('simple.signUp')}}">SIGN UP</a>
+                </div>
+                <div class="login">
+                    <a href="{{route('simple.signIn')}}">LOGIN</a>
+                </div>
+            </div>
+        @endif
+        @if(Auth::check())
+            <div class="autorization">
+                <div class="sign_up" >
+                    <a href="#">{{Auth::user()->name}}</a>
+                    <div class="dropdown-content">
+                        <a href="{{route('simple.logout')}}">Logout</a>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="onlinebooking">
         <h1>
@@ -77,39 +103,88 @@
     </div>
 
 </header>
-
 <div class="container main">
     <div class="middle_section">
-        <form class="book_yo" method="post" action="{{route('simple.reserv',[$product->id])}}">
+        <form class="" method="post" action="{{route('simple.reserv',[$product->id,Auth::user()->id])}}">
             {{ csrf_field() }}
-        <div class="datepickers">
-            <div class="date first">
-                <h3>Date</h3>
-                <input id="datepicker" name="date" width="276" />
-                <script>
-                    $('#datepicker').datepicker();
-                </script>
+            <div class="datepickers">
+                <div class="date first">
+                    <h3>Date</h3>
+                    <input id="datepicker" name="date" width="276" />
+                    <script>
+                        $('#datepicker').datepicker();
+                    </script>
+
+                </div>
+                <div class="date second">
+                    <h3>TIME</h3>
+                    <input id="timepicker" name="time" width="276" />
+                    <script>
+                        $('#timepicker').timepicker();
+                    </script>
+                </div>
+                <div class="people">
+                    <h3>PEOPLE</h3>
+                    <input type="number" name="adult" width="276" />
+                </div>
+                <textarea class="commentary" rows="3" cols="100" name="comment"  placeholder="Add a comment..."></textarea>
+
+                <input data-toggle="modal" data-target="#myModal" class="book_yo" type="button" name="" value="BOOK YOUR TABLE">
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" style="color:black;">Payment</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="four_inputs">
+                                    <div class="name">
+                                        NAME ON CARD
+                                    </div>
+                                    <input type="text" name="name" placeholder="Name/Surname">
+                                    <div class="name">
+                                        CARD NUMBER
+                                    </div>
+                                    <input type="number" name="number" placeholder="---- ---- ---- ----">
+                                    <div class="lastones">
+                                        <div class="left">
+                                            <div class="name">
+                                                EXPIRY DATE
+                                            </div>
+                                            <input type="text" name="card_date" placeholder="MM/YYYY">
+                                        </div>
+                                        <div class="right">
+                                            <div class="name">
+                                                CVV
+                                            </div>
+                                            <input type="text" name="code" placeholder="Code">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input class="book_yo" type="submit" name="" value="PAW NOW">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
-            <div class="date second">
-                <h3>TIME</h3>
-                <input id="timepicker" name="time" width="276" />
-                <script>
-                    $('#timepicker').timepicker();
-                </script>
-            </div>
-            <div class="people">
-                <h3>PEOPLE</h3>
-                <input type="number" name="adult" width="276" />
-            </div>
-        </div>
 
-            <input type="submit" class="qwe" value="BOOK YOUR TABLE">
+
         </form>
+
+
+
+
     </div>
 
 </div>
-
 
 
 <footer>
@@ -141,19 +216,19 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="images/phone.jpg">
+                    <img src="{{ asset('assets/images/phone.png')}}">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="images/facebook.jpg">
+                        <img src="{{ asset('assets/images/facebook.png')}}">
                     </div>
                     <div>
-                        <img src="images/instagram.jpg">
+                        <img src="{{ asset('assets/images/instagram.png')}}">
                     </div>
                     <div>
-                        <img src="images/vk.jpg">
+                        <img src="{{ asset('assets/images/vk.jpg')}}">
                     </div>
                 </div>
             </div>

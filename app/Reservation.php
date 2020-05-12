@@ -16,4 +16,8 @@ class Reservation extends Model
     public function menu_orders(){
          return $this->hasMany('App\Menu_order','res_id','id');
     }
+    public function users(){
+        return $this->belongsTo('App\User','user_id','id');
+    }
+
 }

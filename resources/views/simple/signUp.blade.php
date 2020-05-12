@@ -82,7 +82,7 @@
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
             </label>
-            <label class="container1">Are a partner?
+            <label class="container1">Want to be a partner?
                 <input type="checkbox" name="partner" value="1">
                 <span class="checkmark"></span>
             </label>

@@ -33,9 +33,8 @@
                                 <tr>
                                     <th scope="col">{{ __('Дата') }}</th>
                                     <th scope="col">{{ __('Время') }}</th>
-                                    <th scope="col">{{ __('Стол') }}</th>
-                                    <th scope="col">{{ __('Меню') }}</th>
-                                    <th scope="col">{{ __('Продукт') }}</th>
+                                    <th scope="col">{{ __('Ползователь') }}</th>
+                                    <th scope="col">{{ __('Ресторан') }}</th>
 
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
@@ -47,8 +46,7 @@
                                     <tr>
                                         <td>{{ $reservation->date }}</td>
                                         <td>{{ $reservation->time }}</td>
-                                        <td>{{ $reservation->table }}</td>
-                                        <td>{{ $reservation->menu }}</td>
+                                        <td>{{ $reservation->users->name }}</td>
                                         <td>{{ $reservation->products->name }}</td>
                                         <td>{{ $reservation->created_at}}</td>
                                         <td>{{ $reservation->updated_at}}</td>

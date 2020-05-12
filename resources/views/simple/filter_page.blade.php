@@ -51,7 +51,15 @@
 
 
 
-
+<style>
+    .object {
+        margin-bottom: 40px;
+    }
+    .container.main nav {
+        display: flex;
+        justify-content: center;
+    }
+</style>
 </head>
 
 
@@ -83,46 +91,54 @@
         @endif
     </div>
 
+    <style>
+        .container.main {
+            box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+
 
 </header>
 
 <div class="container main">
     <div class="middle_section">
         <div class="leftside">
-            <form action="/action_page.php">
+            <form method="post" action="{{route('simple.filter')}}">
+                {{ csrf_field() }}
+                <input class="book_now" type="submit" name="" value="Filter" style="width: 100px;">
                 <p>PRICE</p>
                 @foreach($prices as $price)
                 <label class="container_check">{{$price->price}} tg
-                    <input type="checkbox">
+                    <input type="checkbox" name="price[]" value="{{$price->id}}">
                     <span class="checkmark"></span>
                 </label>
                     @endforeach
 
-            </form>
 
-            <form action="/action_page.php">
+
                 <p>CUSINE</p>
                 @foreach($kitchens as $kitchen)
                 <label class="container_check">{{$kitchen->name}}
-                    <input type="checkbox">
+                    <input type="checkbox" name="kitchen" value="{{$kitchen->id}}">
                     <span class="checkmark"></span>
                 </label>
                     @endforeach
 
-            </form>
 
-            <form action="/action_page.php">
+
+
                 <p>FEATURES</p>
                 @foreach($comforts as $comfort)
                 <label class="container_check">{{$comfort->name}}
-                    <input type="checkbox">
+                    <input type="checkbox" name="comfort" value="{{$comfort->id}}">
                     <span class="checkmark"></span>
                 </label>
                     @endforeach
-
-
-
             </form>
+
+
+
+
 
         </div>
         <div class="rightside">
@@ -130,8 +146,8 @@
             <div class="object">
 
                 <div class="background_image">
-                    <img src="{{ asset('assets/images/asia_mama.jpg')}}">
-{{--                    <img src="assets/images/{{$product->product_images->image}}">--}}
+{{--                    <img src="{{ asset('assets/images/asia_mama.jpg')}}">--}}
+                 <img src="{{asset('assets/images/' . $product->product_images[0]->image)}}">
                 </div>
                 <div class="desc">
                     <div class="restaurant_name">
@@ -146,6 +162,7 @@
             @endforeach
         </div>
     </div>
+
 {{$products->links()}}
 </div>
 
@@ -182,16 +199,16 @@
             </div>
             <div class="social_media">
                 <div class="phone">
-                    <img src="{{ asset('assets/images/phone.jpg')}}">
+                    <img src="{{ asset('assets/images/phone.png')}}">
                     <p>+7 (747) 691-47-27
                     </p>
                 </div>
                 <div class="social_links">
                     <div>
-                        <img src="{{ asset('assets/images/facebook.jpg')}}">
+                        <img src="{{ asset('assets/images/facebook.png')}}">
                     </div>
                     <div>
-                        <img src="{{ asset('assets/images/instagram.jpg')}}">
+                        <img src="{{ asset('assets/images/instagram.png')}}">
                     </div>
                     <div>
                         <img src="{{ asset('assets/images/vk.jpg')}}">

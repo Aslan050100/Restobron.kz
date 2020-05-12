@@ -182,6 +182,11 @@ Route::match(['get','post'],'/filter_page',[
     'as' => 'simple.filter_page'
 ]);
 
+Route::match(['get','post'],'/filter',[
+    'uses' => 'SimpleController@filter',
+    'as' => 'simple.filter'
+]);
+
 Route::match(['get','post'],'/detail/{id}',[
     'uses' => 'SimpleController@detail',
     'as' => 'simple.detail'
@@ -208,7 +213,7 @@ Route::match(['get','post'],'/signUp',[
     'uses' => 'SignController@signUp',
     'as' => 'simple.signUp'
 ]);
-Route::match(['post'],'/store',[
+Route::match(['get','post'],'/store',[
     'uses' => 'SignController@store',
     'as' => 'simple.store'
 ]);
@@ -216,7 +221,7 @@ Route::match(['get','post'],'/signIn',[
     'uses' => 'SignController@signIn',
     'as' => 'simple.signIn'
 ]);
-Route::match(['post'],'/login',[
+Route::match(['get','post'],'/login',[
     'uses' => 'SignController@login',
     'as' => 'simple.login'
 ]);
@@ -234,7 +239,7 @@ Route::match(['get','post'],'/reservation/{pro_id}',[
     'as' => 'simple.reservation'
 ]);
 
-Route::match(['get','post'],'/reserv/{pro_id}',[
+Route::match(['get','post'],'/reserv/{pro_id}/{user_id}',[
     'uses' => 'SimpleController@reserv',
     'as' => 'simple.reserv'
 ]);
